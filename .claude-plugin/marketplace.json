@@ -1,0 +1,14 @@
+{
+  "name": "slavafyi",
+  "owner": {
+    "name": "Slava M.",
+    "email": "hi@slava.fyi"
+  },
+  "plugins": [
+    {
+      "name": "forge",
+      "source": "./claude-plugins/forge",
+      "category": "development"
+    }
+  ]
+}

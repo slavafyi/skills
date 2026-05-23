@@ -1,0 +1,9 @@
+{
+  "name": "forge",
+  "version": "0.1.0",
+  "description": "Carrying project context, decisions, specs, and development workflow",
+  "author": {
+    "name": "Slava M.",
+    "email": "hi@slava.fyi"
+  }
+}
