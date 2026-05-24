@@ -31,14 +31,3 @@ Multi-agent / agent-agnostic project:
    - If `.agents/skills/` does not exist, read `.claude/skills/` as Claude-only project skills.
    - If both exist and they are not symlinked, read both and watch for conflicting instructions.
 3. If no local skill directory exists, continue without local skills.
-
-## How to use local skills
-
-Do not load every local skill in full by default.
-
-First read each `SKILL.md` frontmatter:
-
-- `name`
-- `description`
-
-Load the full skill only when its description matches the current task.
