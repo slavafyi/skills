@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "forge",
-      "source": "./claude-plugins/forge",
+      "source": "./plugins/forge",
       "category": "development"
     }
   ]

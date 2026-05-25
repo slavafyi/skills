@@ -5,7 +5,7 @@
       "name": "forge",
       "source": {
         "source": "local",
-        "path": "./codex-plugins/forge"
+        "path": "./plugins/forge"
       },
       "policy": {
         "installation": "AVAILABLE",
