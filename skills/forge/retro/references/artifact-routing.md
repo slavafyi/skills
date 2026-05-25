@@ -61,7 +61,7 @@ Example:
 
 Use this when the lesson is universal across projects and belongs in the Forge plugin itself.
 
-Do not edit global Forge from an ordinary project. Report a suggested change instead.
+Do not edit Forge skills from an ordinary project. Report a suggested change instead.
 
 ## No persistence
 
