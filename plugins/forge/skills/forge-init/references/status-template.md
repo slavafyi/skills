@@ -23,9 +23,14 @@ Updated: YYYY-MM-DD
 
 - None recorded.
 
+## Validation
+
+- Not validated.
+
 ## Relevant artifacts
 
 - Specs: none yet.
+- Plans: none yet.
 - ADRs: none yet.
 ```
 

@@ -7,6 +7,7 @@ Update `docs/status.md` after meaningful work, not after every tiny edit.
 - A feature slice was implemented.
 - A bug was reproduced or fixed.
 - A spec was created or materially changed.
+- A plan was created or a slice status changed.
 - An ADR was created or accepted.
 - The next action changed.
 - The user corrected the direction and future work should continue differently.
@@ -16,7 +17,7 @@ Update `docs/status.md` after meaningful work, not after every tiny edit.
 - Only formatting changed.
 - A typo was fixed.
 - The current status already describes the state accurately.
-- The only new information belongs in a spec or ADR.
+- The only new information belongs in a spec, plan, ADR, or local skill.
 
 ## Staleness rules
 
@@ -31,5 +32,6 @@ If status conflicts with code or Git diff:
 Use precise language:
 
 - "Validated with `npm test`" only if that command ran and passed.
+- "Failed: `npm test` ..." when validation failed.
 - "Not validated" if no validation was run.
-- "Could not validate because ..." when validation was attempted but failed for environmental reasons.
+- "Could not validate because ..." when validation was attempted but blocked by the environment.

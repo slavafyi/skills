@@ -11,53 +11,19 @@ This skill turns user corrections into better future behavior without dumping ru
 
 ## Use when
 
-Use this skill when the user says things like:
-
-- "Go retro";
-- "Do a retrospective";
-- "Keep this in mind for the project";
-- "Take note of this lesson";
-- "Update your local skills";
-- "Do it this way next time";
-- "Don't do that again in this project".
+- The user corrects agent behavior and wants the lesson preserved.
+- The current session produced reusable project-specific guidance.
+- The user asks to update local skills, memory, status, specs, plans, or ADRs based on the conversation.
+- The user says "Go retro", "Do a retrospective", "Do it this way next time", or "Don't do that again in this project".
 
 ## Procedure
 
-1. Review the session.
-   - Identify user corrections, rejected approaches, accepted fixes, and repeated preferences.
-   - Use only available conversation and project context.
-   - Do not invent lessons.
-
-2. Extract candidate lessons.
-   - Each lesson must be durable, reusable, and specific.
-   - Ignore one-off edits, temporary preferences, and ordinary task details.
-
-3. Route each lesson.
-   - Use `references/artifact-routing.md`.
-   - Possible targets:
-     - `docs/status.md`
-     - `docs/specs/<slug>.md`
-     - `docs/adr/<id>-<slug>.md`
-     - project-local skill
-     - suggested Forge core skill change
-     - no persistence
-
-4. Create or update project-local skills when appropriate.
-   - Use `references/local-skill-targets.md` to choose the path.
-   - Use `references/local-skill-authoring.md` to write the skill.
-   - Use `references/local-skill-template.md` as the base.
-   - Prefer updating an existing local skill over creating a duplicate.
-
-5. Update project artifacts.
-   - Status updates go through the `forge-status` format.
-   - Spec updates should preserve requirements and acceptance criteria.
-   - ADRs should stay narrow and architectural.
-
-6. Report the retro.
-   - Summarize lessons found.
-   - List artifacts created or updated.
-   - List ignored lessons and why, when useful.
-   - List suggested Forge core changes, if any.
+1. Review the current session for durable lessons using `references/retro-checklist.md`.
+2. Filter out one-off edits, temporary preferences, ordinary task details, and weak signals.
+3. Route each durable lesson with `references/artifact-routing.md`.
+4. Create or update project-local skills only when the lesson is repeatable agent behavior.
+5. Update project artifacts only when the lesson belongs in status, spec, plan, or ADR.
+6. Report lessons found, artifacts changed, skipped items, and suggested Forge core changes.
 
 ## Project-local skill rule
 

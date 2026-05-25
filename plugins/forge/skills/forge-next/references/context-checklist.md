@@ -10,11 +10,13 @@ Use this checklist to build enough context for the next action.
 - Current Git diff, if there are uncommitted changes
 - `docs/status.md`, if present
 - Recent files in `docs/specs/`, if present
+- Recent files in `docs/plans/`, if present
 - Recent files in `docs/adr/`, if present
 - Project-local skills, if present
 
 ## Useful when relevant
 
+- Recent files in `docs/ideas/`
 - README
 - package manager files
 - app framework config
@@ -26,4 +28,5 @@ Use this checklist to build enough context for the next action.
 
 - Reading the whole repository without a reason.
 - Treating generated files or build outputs as source of truth.
-- Starting implementation because the next action "seems obvious" while status/specs are missing.
+- Starting implementation because the next action "seems obvious" while status/specs/plans are missing.
+- Treating a stale plan as truth when code, tests, validation, or Git diff contradict it.

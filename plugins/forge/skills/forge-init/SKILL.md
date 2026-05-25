@@ -5,57 +5,30 @@ description: Initialize or repair a repository for the Forge workflow. Use when 
 
 # forge-init
 
-Initialize the repository for Forge with the smallest useful project footprint.
-
-Forge project artifacts live in `docs/` by default:
-
-```text
-docs/status.md
-docs/specs/
-docs/adr/
-```
+Create the smallest useful Forge project footprint.
 
 ## Use when
 
-Use this skill when:
-
-- the user asks to initialize Forge in a project;
-- `forge-next` cannot find `docs/status.md`;
-- the project has partial Forge artifacts that need repair;
-- the user wants a clean project setup for future agent sessions.
+- The user asks to set up Forge in a repository.
+- Required Forge artifacts such as `docs/status.md`, `docs/specs/`, or `docs/adr/` are missing.
+- Existing Forge project artifacts need minimal repair without changing application code.
+- The user says "Set up Forge", "Initialize Forge", "Create project status", or "Repair Forge docs".
 
 ## Procedure
 
-1. Find the repository root.
-   - Prefer the Git root when available.
-   - Otherwise use the current working directory.
-
-2. Inspect existing project context.
-   - Check for `docs/status.md`, `docs/specs/`, and `docs/adr/`.
-   - Check for `AGENTS.md`, `CLAUDE.md`, `.claude/`, `.agents/`, and existing local skill directories.
-   - Do not overwrite existing project documentation without a reason.
-
-3. Create missing Forge project artifacts.
-   - Create `docs/status.md` from `references/status-template.md` when absent.
-   - Create `docs/specs/`.
-   - Create `docs/adr/`.
-
-4. Keep agent entrypoints small.
-   - Do not stuff process rules into `AGENTS.md` or `CLAUDE.md`.
-   - Only create or update an entrypoint when the user asks or the file already exists and needs a short pointer.
-   - Use `references/agents-entrypoint.md` as the maximum shape.
-
-5. Report the result.
-   - List created files and directories.
-   - List skipped existing files.
-   - State the next recommended Forge skill, usually `forge-status` or `forge-next`.
+1. Find the repository root, preferring the Git root.
+2. Inspect existing context: `docs/status.md`, `docs/specs/`, `docs/plans/`, `docs/adr/`, local skill directories, and root agent entrypoints.
+3. Create missing default artifacts: `docs/status.md`, `docs/specs/`, and `docs/adr/`.
+4. Do not create optional folders like `docs/ideas/` or `docs/plans/` until a skill needs them.
+5. Keep agent entrypoints small. Use `references/agents-entrypoint.md` only when the user asks or an existing entrypoint needs a short pointer.
+6. Report created files, skipped files, and the next recommended skill.
 
 ## Constraints
 
 - Do not change application source code.
 - Do not invent project requirements.
-- Do not create large documentation structures.
-- Preserve existing conventions when they are already clear.
+- Do not create a large documentation tree.
+- Preserve existing project conventions when clear.
 
 ## References
 

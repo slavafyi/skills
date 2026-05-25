@@ -23,9 +23,18 @@ Updated: YYYY-MM-DD
 
 - ...
 
+## Validation
+
+- Passed: `...`
+- Failed: `...`
+- Not run: `...` because ...
+- Blocked: `...` because ...
+
 ## Relevant artifacts
 
+- Idea: `docs/ideas/...`
 - Spec: `docs/specs/...`
+- Plan: `docs/plans/...`
 - ADR: `docs/adr/...`
 ```
 
@@ -35,7 +44,9 @@ Keep the file short enough that an agent can read it at the start of every sessi
 
 Prefer bullets over prose.
 
-Use links or paths to specs and ADRs instead of copying their contents.
+Use links or paths to ideas, specs, plans, and ADRs instead of copying their contents.
+
+Omit artifact lines that do not apply.
 
 ## Field meanings
 
@@ -46,5 +57,7 @@ Use links or paths to specs and ADRs instead of copying their contents.
 `Next action` should be actionable and specific.
 
 `Open questions` should include only blockers or decisions that affect the next step.
+
+`Validation` records what is known about checks. Do not claim anything passed unless it actually ran and passed.
 
 `Relevant artifacts` should point to the documents that matter now.

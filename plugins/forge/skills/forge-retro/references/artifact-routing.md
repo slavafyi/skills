@@ -9,7 +9,8 @@ Use status when the lesson is about continuation:
 - where the work stopped;
 - what was fixed;
 - what remains;
-- what the next action is.
+- what the next action is;
+- what validation is known.
 
 Example:
 
@@ -23,11 +24,25 @@ Use a spec when requirements changed:
 - changed behavior;
 - clarified scope;
 - removed feature scope;
-- important edge case.
+- important edge case;
+- design ambiguity that must be decided before implementation.
 
 Example:
 
 > The feature must not add a new settings page; it should reuse the existing preferences panel.
+
+## `docs/plans/<slug>.md`
+
+Use a plan when implementation sequencing changed but requirements did not:
+
+- a slice should be split or reordered;
+- validation per slice changed;
+- a dependency or stop condition was discovered;
+- a planned step is now blocked or done.
+
+Example:
+
+> Split the settings migration into a read-only compatibility slice before changing write behavior.
 
 ## `docs/adr/<id>-<slug>.md`
 
@@ -51,7 +66,8 @@ Use a local skill when the lesson changes how agents should work in this reposit
 - testing pattern;
 - API conventions;
 - UI conventions;
-- review checks.
+- review checks;
+- recurring edge-case handling rule.
 
 Example:
 

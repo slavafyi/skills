@@ -1,40 +1,20 @@
 # Agent entrypoints
 
-Forge uses one root-level agent entrypoint per project mode.
+Forge should not turn root agent entrypoints into project memory.
 
-## Claude-only
+## Default multi-agent mode
 
-Use:
+Use `AGENTS.md` as the source of truth when multiple agents may work in the repository.
 
-`CLAUDE.md`
+Use a `CLAUDE.md -> AGENTS.md` symlink only when the project wants a Claude bridge.
 
-Do not create `AGENTS.md` unless the user asks for multi-agent support.
+## Claude-only mode
 
-## Default
-
-Use:
-
-`AGENTS.md`
-
-This is the default for non-Claude and agent-agnostic agents.
-
-## Multi-agent / agent-agnostic
-
-Use:
-
-`AGENTS.md`
-
-Then create:
-
-`CLAUDE.md -> AGENTS.md`
-
-`AGENTS.md` is the source of truth. `CLAUDE.md` must be a symlink, not a separate copy.
+Use `CLAUDE.md` only when the project is intentionally Claude-only and there is no multi-agent source of truth.
 
 ## Entrypoint content
 
-Keep the entrypoint short. It should not become project memory.
-
-Recommended content:
+Keep the entrypoint short. Recommended maximum shape:
 
 ```md
 # Agent instructions
@@ -43,13 +23,14 @@ This project uses Forge.
 
 Start with `forge-next` when the next action is unclear.
 
-Project artifacts live in:
+Project artifacts:
 
 - `docs/status.md`
 - `docs/specs/`
+- `docs/plans/`
 - `docs/adr/`
 
-Project-local skills may exist in the agent-specific local skills directory.
+Project-local skills may exist in `.agents/skills/` or another local skills directory.
 ```
 
-Do not duplicate durable project knowledge here. Store feature requirements in specs and architectural decisions in ADR.
+Do not duplicate durable project knowledge here. Store requirements in specs, implementation order in plans, architectural decisions in ADRs, and repeatable agent behavior in project-local skills.

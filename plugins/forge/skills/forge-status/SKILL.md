@@ -9,50 +9,26 @@ Maintain `docs/status.md` as the short continuation point for future sessions.
 
 ## Use when
 
-Use this skill when:
-
-- meaningful work was completed;
-- a session is ending;
-- `docs/status.md` is stale or missing;
-- `forge-next` cannot determine the current focus;
-- the user asks to update status.
+- The user asks for current project status or a handoff note.
+- Meaningful work changed the active focus, validation state, blockers, or next action.
+- `docs/status.md` is missing, stale, misleading, or too noisy for a future session.
+- The user says "What's the status?", "Update status", "Write a handoff", or "Save where we are".
 
 ## Procedure
 
-1. Inspect the current state.
-   - Current Git branch and diff.
-   - Recent commits when useful.
-   - `docs/status.md`, if present.
-   - Relevant specs in `docs/specs/`.
-   - Relevant ADRs in `docs/adr/`.
-   - The current conversation context, if available.
-
-2. Decide what changed.
-   - Completed work.
-   - Current active focus.
-   - Remaining next action.
-   - Open questions or blockers.
-   - Relevant artifacts.
-
-3. Update `docs/status.md`.
-   - Use `references/status-format.md`.
-   - Keep it concise.
-   - Preserve useful existing context.
-   - Remove stale details that would mislead the next session.
-
-4. Do not create extra documentation.
-   - Do not create new specs or ADRs unless routed to the matching skill.
-
-5. Report what changed.
-   - Mention the updated status file.
-   - State the next normal action.
+1. Inspect current state: Git branch/diff, recent commits when useful, status, relevant specs/plans/ADRs, local skills, and current conversation context.
+2. Decide what changed: completed work, active focus, next action, open questions, blockers, validation, and relevant artifacts.
+3. Update `docs/status.md` using `references/status-format.md`.
+4. Keep it concise and remove stale details that would mislead the next session.
+5. Report what changed and the next normal action.
 
 ## Constraints
 
 - Do not record secrets, credentials, private tokens, or environment-specific values.
-- Do not turn status into a long historical log.
-- Do not claim validation passed unless it was actually run.
-- Do not overwrite human-authored status sections that remain accurate.
+- Do not turn status into a changelog or project wiki.
+- Do not claim validation passed unless it actually ran and passed.
+- Do not create specs, plans, ADRs, or skills from this skill.
+- Do not overwrite accurate human-authored context.
 
 ## References
 
