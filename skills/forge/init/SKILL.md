@@ -39,7 +39,6 @@ Use this skill when:
    - Create `docs/status.md` from `references/status-template.md` when absent.
    - Create `docs/specs/`.
    - Create `docs/adr/`.
-   - Use `.gitkeep` files only when the environment cannot preserve empty directories.
 
 4. Keep agent entrypoints small.
    - Do not stuff process rules into `AGENTS.md` or `CLAUDE.md`.
