@@ -7,8 +7,6 @@ description: Create or update docs/status.md as the project continuation point. 
 
 Maintain `docs/status.md` as the short continuation point for future sessions.
 
-Status is not a memory file, rules file, changelog, or project wiki.
-
 ## Use when
 
 Use this skill when:

@@ -1,6 +1,6 @@
 # Local skill authoring
 
-Project-local skills should follow the Agent Skills shape and stay focused.
+Project-local skills should follow the [Agent Skills](https://agentskills.io) shape and stay focused.
 
 ## Required structure
 

@@ -29,7 +29,6 @@ Use this skill when the user says things like:
    - `docs/status.md`
    - recent files in `docs/specs/`
    - recent files in `docs/adr/`
-   - local project skills using `references/local-skill-discovery.md`
    - README and package/config files when useful
    - current Git branch, status, and diff when available
 
@@ -90,5 +89,4 @@ Keep it short. The goal is to continue work, not produce a project audit.
 ## References
 
 - `references/context-checklist.md`
-- `references/local-skill-discovery.md`
 - `references/routing.md`

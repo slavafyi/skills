@@ -39,21 +39,13 @@ Use this skill when:
    - Create `docs/status.md` from `references/status-template.md` when absent.
    - Create `docs/specs/`.
    - Create `docs/adr/`.
-   - Use `.gitkeep` files only when the environment cannot preserve empty directories.
 
-4. Handle project-local skill directories only when needed.
-   - Do not create local skill directories just because Forge is initialized.
-   - If the user asks for local project skills, apply `references/local-skill-modes.md`.
-   - If the project is Claude-only, use `.claude/skills/`.
-   - If the project is default/non-Claude, use `.agents/skills/`.
-   - If the project is explicitly multi-agent or agent-agnostic, use `.agents/skills/` and symlink individual skills into `.claude/skills/`.
-
-5. Keep agent entrypoints small.
+4. Keep agent entrypoints small.
    - Do not stuff process rules into `AGENTS.md` or `CLAUDE.md`.
    - Only create or update an entrypoint when the user asks or the file already exists and needs a short pointer.
    - Use `references/agents-entrypoint.md` as the maximum shape.
 
-6. Report the result.
+5. Report the result.
    - List created files and directories.
    - List skipped existing files.
    - State the next recommended Forge skill, usually `forge-status` or `forge-next`.
@@ -63,12 +55,10 @@ Use this skill when:
 - Do not change application source code.
 - Do not invent project requirements.
 - Do not create large documentation structures.
-- Do not create project-local skills unless requested or required by a retro result.
 - Preserve existing conventions when they are already clear.
 
 ## References
 
 - `references/project-layout.md`
 - `references/status-template.md`
-- `references/local-skill-modes.md`
 - `references/agents-entrypoint.md`
