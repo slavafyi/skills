@@ -10,3 +10,7 @@ When editing a plugin:
 - keep skills harness-agnostic, portable, and safe to use across coding agents;
 - make frontmatter `name` match the skill directory exactly;
 - do not add secrets, credentials, personal tokens, or machine-specific paths.
+
+## Versioning rule
+
+When a plugin package changes, bump that plugin's version in every manifest that declares it. Keep all manifests for the same plugin in sync, including skill and documentation-only changes.

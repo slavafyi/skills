@@ -18,11 +18,14 @@ Do not pick a target from vibes. If the target is ambiguous, ask one short quest
 Before editing, identify:
 
 - likely files or modules;
+- the spec, plan, or explicit user request that defines the intended behavior;
 - existing tests or examples;
 - validation command;
 - local skills that apply;
 - ADRs that constrain the change;
 - current uncommitted changes.
+
+If intended behavior is not defined for an important edge case, stop before coding and route to `forge-spec` or the user.
 
 ## 3. Use vertical slices
 
@@ -67,6 +70,7 @@ If test-first is not practical, explain why and use the best available feedback 
 A slice is done only when:
 
 - the targeted behavior is implemented;
+- any new edge case was either already specified or routed back to spec/design before implementation;
 - validation was run or a concrete reason is recorded;
 - plan/status state is updated when the continuation point changed;
 - the next action is clear.

@@ -21,8 +21,9 @@ Implement one focused slice and prove it works.
 3. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
 4. Define the feedback signal before editing: test, typecheck, build, lint, manual check, or runtime check.
 5. Implement the smallest complete change for the selected slice.
-6. When validation fails or a surprising edge case appears, stop and diagnose. Use `forge-fix` for bugs; return to `forge-spec` for design ambiguity.
-7. Validate, update plan/status when meaningful, and report changed files plus exact validation results.
+6. When validation fails or a surprising edge case appears, stop and diagnose before editing further. Identify the observed signal, expected behavior, likely root cause, and whether the spec/design covers it.
+7. Use `forge-fix` for reproducible broken behavior; return to `forge-spec` or the user when the edge case is unspecified or reveals a design conflict.
+8. Validate, update plan/status when meaningful, and report changed files plus exact validation results.
 
 ## Output
 
@@ -49,7 +50,7 @@ Next action:
 
 - Do not implement broad vague requests without a spec, plan, or explicit small target.
 - Do not patch symptoms when the root cause is unknown.
-- Do not resolve unspecified edge cases in code; return to spec/design discussion.
+- Do not resolve unspecified edge cases in code; return to spec/design discussion first, then update the spec/plan before implementing the chosen behavior.
 - Do not rewrite unrelated code or discard user changes.
 - Do not claim validation passed unless it actually ran and passed.
 - Do not create PRs, merge, deploy, or run destructive commands unless explicitly instructed.

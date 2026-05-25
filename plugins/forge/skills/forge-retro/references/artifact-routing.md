@@ -2,6 +2,17 @@
 
 Route each lesson to the smallest correct artifact.
 
+Do not store repeatable agent behavior rules in generic docs just because they are easy to edit. Use project docs for project facts, requirements, plans, decisions, and handoff state. Use project-local skills for reusable agent behavior.
+
+## Decision tree
+
+- Reusable agent behavior -> project-local skill.
+- Product behavior, requirements, scope, or acceptance criteria -> spec.
+- Implementation order, slice boundaries, or blockers -> plan.
+- Durable architectural tradeoff -> ADR.
+- Current progress, handoff state, or next continuation point -> status.
+- One-off correction with no future value -> no persistence.
+
 ## `docs/status.md`
 
 Use status when the lesson is about continuation:

@@ -30,7 +30,23 @@ Before diagnosing, check:
 - the symptom is captured clearly;
 - unrelated failures are not being mistaken for the bug.
 
-## 3. Sharpen the loop
+## 3. Record the diagnosis before fixing
+
+Before editing production code, write a short diagnosis record:
+
+```text
+Observed behavior: ...
+Expected behavior: ...
+Reproduction path: ...
+Suspected root cause: ...
+Evidence: ...
+Smallest safe fix: ...
+Regression check: ...
+```
+
+If any required part is unknown, keep diagnosing or stop and explain what is missing. Do not replace a missing root cause with a workaround that only hides the symptom.
+
+## 4. Sharpen the loop
 
 Improve the loop before debugging deeply:
 
@@ -41,7 +57,7 @@ Improve the loop before debugging deeply:
 - pin time, randomness, filesystem, or network when relevant;
 - repeat flaky triggers until the failure rate is useful.
 
-## 4. Hypothesize
+## 5. Hypothesize
 
 Create 3 to 5 ranked hypotheses when the cause is not obvious.
 
@@ -53,7 +69,7 @@ If <cause> is true, then <probe> should show <observable result>.
 
 Discard hypotheses that cannot be tested.
 
-## 5. Probe one variable at a time
+## 6. Probe one variable at a time
 
 Prefer:
 
@@ -70,7 +86,7 @@ Avoid:
 - changing several variables at once;
 - adding special cases because they quiet the symptom.
 
-## 6. Escalate design ambiguity
+## 7. Escalate design ambiguity
 
 Stop and return to spec/design discussion when:
 
@@ -80,9 +96,9 @@ Stop and return to spec/design discussion when:
 - the fix would contradict the spec or ADR;
 - the proposed fix is only a workaround for an unknown deeper issue.
 
-Name the ambiguity and present options. Do not silently choose an edge-case behavior in code.
+Name the ambiguity and present options. Do not silently choose an edge-case behavior in code, even if the change looks small.
 
-## 7. Remove temporary probes
+## 8. Remove temporary probes
 
 Tag temporary logs or probes with a unique marker such as:
 

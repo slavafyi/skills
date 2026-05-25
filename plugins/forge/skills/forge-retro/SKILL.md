@@ -7,7 +7,9 @@ description: Run a session retro after user feedback or correction. Use when the
 
 Extract durable lessons from the current session and save them in the right place.
 
-This skill turns user corrections into better future behavior without dumping rules into `AGENTS.md`, `CLAUDE.md` or project docs.
+This skill turns user corrections into better future behavior without dumping repeatable behavior rules into `AGENTS.md`, `CLAUDE.md`, or generic project docs.
+
+Project facts, requirements, implementation plans, architectural decisions, and current handoff state still belong in the appropriate project artifacts.
 
 ## Use when
 
@@ -43,7 +45,7 @@ Do not create a local skill for a one-off correction.
 ## Constraints
 
 - Do not create divergent copies in multi-agent mode.
-- Do not add long process rules to `AGENTS.md` or `CLAUDE.md`.
+- Do not add long process rules to `AGENTS.md`, `CLAUDE.md`, or generic docs.
 - Do not modify installed Forge skills from an ordinary project.
 - Do not create ADRs for style preferences unless they are architectural.
 - Do not preserve everything; filtering is the point.

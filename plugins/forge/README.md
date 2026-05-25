@@ -2,13 +2,25 @@
 
 Forge is a portable skill pack for repeatable software-project work with coding agents. It is meant to preserve project context, decisions, status, and local agent behavior without turning root files like `AGENTS.md` or `CLAUDE.md` into a messy knowledge base.
 
-The default development flow is:
+Forge is not a mandatory pipeline. Skills should compose into the smallest useful flow for the current task.
+
+Common flows:
 
 ```text
-forge-idea -> forge-spec -> forge-plan -> forge-build
+Feature flow:
+forge-idea -> forge-spec -> forge-plan -> forge-build -> forge-review -> forge-status
+
+Bug flow:
+forge-fix -> forge-review -> forge-status
+
+Session learning flow:
+user correction -> forge-retro -> local skill / spec / plan / ADR / status update
+
+Resume flow:
+forge-status -> forge-next
 ```
 
-This is not a mandatory pipeline. Every skill should also work on its own: use `forge-fix` for a bug, `forge-review` for a diff, `forge-adr` for a durable architectural choice, `forge-status` for handoff, and `forge-retro` to turn session lessons into the right artifact or project-local skill.
+Every skill should also work on its own: use `forge-fix` for a bug, `forge-review` for a diff, `forge-adr` for a durable architectural choice, `forge-status` for handoff, and `forge-retro` to turn session lessons into the right artifact or project-local skill.
 
 Agents should trigger Forge skills from normal user language when the intent matches the skill. Slash commands are a convenience, not the only entrypoint.
 
