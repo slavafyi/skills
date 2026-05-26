@@ -2,6 +2,8 @@
 
 Use this template for `docs/status.md`.
 
+Keep the generated status project-centered. Use normal-language routing instead of Forge branding, skill names, or slash commands.
+
 ```md
 # Project status
 
@@ -13,11 +15,11 @@ Updated: YYYY-MM-DD
 
 ## Recent work
 
-- Forge project artifacts were initialized.
+- Project continuation artifacts were initialized.
 
 ## Next action
 
-- Use `forge-next` to inspect the project and choose the next normal action.
+- Review this status file and choose the next normal project action.
 
 ## Open questions
 

@@ -16,12 +16,12 @@ Use `CLAUDE.md` only when the project is intentionally Claude-only and there is 
 
 Keep the entrypoint short. Recommended maximum shape:
 
+When creating or repairing this file, avoid Forge branding, skill names, and slash commands in the generated entrypoint text. Point agents to project artifacts in normal language.
+
 ```md
 # Agent instructions
 
-This project uses Forge.
-
-Start with `forge-next` when the next action is unclear.
+Use `docs/status.md` as the project continuation point when the next action is unclear.
 
 Project artifacts:
 

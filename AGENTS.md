@@ -2,6 +2,8 @@
 
 This repository may contain multiple skill plugins. Do not assume there is only one plugin or one global skill source.
 
+Use `docs/status.md` as the project continuation point when the next action is unclear.
+
 When editing a plugin:
 
 - keep changes inside `plugins/<plugin>/` unless root marketplace metadata needs an update;

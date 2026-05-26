@@ -21,7 +21,8 @@ Create the smallest useful Forge project footprint.
 3. Create missing default artifacts: `docs/status.md`, `docs/specs/`, and `docs/adr/`.
 4. Do not create optional folders like `docs/ideas/` or `docs/plans/` until a skill needs them.
 5. Keep agent entrypoints small. Use `references/agents-entrypoint.md` only when the user asks or an existing entrypoint needs a short pointer.
-6. Report created files, skipped files, and the next recommended skill.
+6. Keep generated project-facing text focused on the project: root entrypoints and default status text should use normal-language routing, not Forge branding, skill names, or slash commands.
+7. Report created files, skipped files, and the next recommended skill.
 
 ## Constraints
 
