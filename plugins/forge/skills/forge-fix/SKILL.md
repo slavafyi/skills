@@ -17,7 +17,7 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 ## Procedure
 
 1. Read relevant context: user report, `docs/status.md`, active spec/plan, ADRs, local skills, Git status, and current diff.
-2. Before editing project code for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
+2. Before making persistent repository changes for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
 3. Build a feedback loop with `references/diagnosis-loop.md` before editing production code.
 4. Reproduce the same symptom the user reported or the same validation failure that blocked work.
 5. Form falsifiable hypotheses and test one variable at a time until there is evidence for the root cause.
@@ -28,8 +28,9 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 
 ## Branch Safety
 
-Before editing project code for reproduction, probes, tests, or fixes:
+Before making persistent repository changes for reproduction, probes, tests, or fixes:
 
+- Treat code, docs, config, runbooks, tests, examples, assets, manifests, and other tracked or intended-to-be-tracked project artifacts as covered changes.
 - Check the current branch, Git status, and existing local/remote branch names.
 - Ask first when on a shared/protected branch such as `main`, `master`, `dev`, `develop`, `trunk`, `staging`, `production`, `prod`, `release/*`, detached HEAD, a mismatched branch, or when unrelated uncommitted changes may be mixed in.
 - Use the available structured ask/confirm tool when possible; otherwise ask in chat and wait.
@@ -67,7 +68,7 @@ Next action:
 - Do not patch symptoms while the root cause is unknown.
 - Do not start a code fix until the root cause has evidence from reproduction, probes, or inspected code paths.
 - Do not turn an unspecified edge case into code without spec/user confirmation and a recorded intended behavior.
-- Do not edit project code on a protected, shared, or mismatched branch without explicit user confirmation or a user-approved branch/worktree.
+- Do not make persistent repository changes on a protected, shared, or mismatched branch without explicit user confirmation or a user-approved branch/worktree.
 - Do not continue editing when the evidence points to a design/spec gap rather than a code defect.
 - Do not change multiple unrelated things at once.
 - Do not leave debug probes behind.
