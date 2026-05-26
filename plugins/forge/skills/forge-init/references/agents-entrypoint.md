@@ -23,12 +23,12 @@ When creating or repairing this file, avoid Forge branding, skill names, and sla
 
 Use `docs/status.md` as the project continuation point when the next action is unclear.
 
-Project artifacts:
+Common project artifact paths:
 
 - `docs/status.md`
-- `docs/specs/`
-- `docs/plans/`
-- `docs/adr/`
+- `docs/specs/<slug>.md`
+- `docs/plans/<slug>.md`
+- `docs/adr/<number>-<slug>.md`
 
 Project-local skills may exist in `.agents/skills/` or another local skills directory.
 ```

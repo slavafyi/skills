@@ -20,7 +20,7 @@ Record durable technical decisions. Do not use ADRs as specs, plans, notes, or T
 2. Read existing ADRs, active spec/plan, `docs/status.md`, relevant code/config, and local skills.
 3. Define the decision, context, alternatives, consequences, and revisit triggers.
 4. If the issue is product behavior or an unspecified edge case, route to `forge-spec` instead of hiding it in an ADR.
-5. Create or update `docs/adr/<number>-<slug>.md` with `references/adr-template.md`.
+5. Create or update `docs/adr/<number>-<slug>.md` with `references/adr-template.md`; create `docs/adr/` only as part of writing the ADR file.
 6. Link related specs/plans/status when the decision affects current work.
 
 ## Output
@@ -46,6 +46,7 @@ Revisit when:
 
 - Do not create ADRs for small style preferences or reversible details.
 - Do not record secrets or environment-specific credentials.
+- Do not create empty artifact directories in advance.
 - Do not rewrite ADR history without supersession.
 - Do not use ADRs to bypass missing specs or user decisions.
 - Do not mark an unresolved decision as accepted.

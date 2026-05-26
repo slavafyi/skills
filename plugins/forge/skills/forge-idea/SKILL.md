@@ -20,7 +20,7 @@ Clarify a raw idea. Do not write a spec, plan, or code.
 2. Restate the problem, expected outcome, likely user or stakeholder, facts, and assumptions.
 3. Compare realistic options using `references/idea-checklist.md`. Include the smallest useful change or "do nothing" option when useful.
 4. Decide the next step: keep as a short answer, save an idea note, route to `forge-spec`, route to `forge-adr`, or route to `forge-fix`.
-5. Persist only durable ideas in `docs/ideas/<slug>.md` using `references/idea-note-template.md`.
+5. Persist only durable ideas in `docs/ideas/<slug>.md` using `references/idea-note-template.md`; create `docs/ideas/` only as part of writing the idea note.
 
 ## Output
 
@@ -46,6 +46,7 @@ Next action:
 - Do not implement code.
 - Do not promote vague ideas directly to `forge-build`.
 - Do not create a document for every brainstorm.
+- Do not create empty artifact directories in advance.
 - Do not hide assumptions inside confident recommendations.
 
 ## References

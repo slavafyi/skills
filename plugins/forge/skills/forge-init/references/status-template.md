@@ -15,7 +15,7 @@ Updated: YYYY-MM-DD
 
 ## Recent work
 
-- Project continuation artifacts were initialized.
+- Project continuation status was initialized.
 
 ## Next action
 

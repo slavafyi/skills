@@ -20,7 +20,7 @@ Define what should change, why it should change, and how success will be judged.
 2. Identify the requested change, scope, non-goals, constraints, and source of truth.
 3. Resolve missing requirements with `references/spec-checklist.md`. Ask the user when an answer would change behavior, scope, or acceptance criteria.
 4. Treat edge cases as design input. If an edge case changes expected behavior, record it as a requirement or open question; do not leave it for `forge-build` to guess.
-5. Create or update `docs/specs/<slug>.md` with `references/spec-template.md`.
+5. Create or update `docs/specs/<slug>.md` with `references/spec-template.md`; create `docs/specs/` only as part of writing the spec file.
 6. Route to `forge-plan` only when the spec is ready and implementation needs slicing.
 
 ## Output
@@ -46,6 +46,7 @@ Next action:
 
 - Do not implement code.
 - Do not create an implementation plan; use `forge-plan` for that.
+- Do not create empty artifact directories in advance.
 - Do not hide assumptions as requirements.
 - Do not resolve product/design ambiguity by inventing an edge-case behavior.
 - Do not create ADRs for ordinary requirements; route durable architecture choices to `forge-adr`.

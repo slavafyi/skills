@@ -59,7 +59,7 @@ Status: proposed | accepted | superseded | deprecated
 
 ## Numbering
 
-Use the next numeric prefix found in `docs/adr/`.
+Use the next numeric prefix found in `docs/adr/`. If `docs/adr/` does not exist because there are no ADRs yet, use `0001` and create the directory only when writing the ADR file.
 
 Examples:
 

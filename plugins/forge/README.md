@@ -92,21 +92,23 @@ Do not patch symptoms. Find the real cause. If the cause is an incomplete spec, 
 
 ## Project artifacts
 
-Default artifacts:
+Default artifact:
 
 ```text
 docs/
   status.md
-  specs/
-  adr/
 ```
 
-Optional artifacts created lazily:
+Other artifact locations are created lazily when they contain real artifacts:
 
 ```text
 docs/
-  ideas/
-  plans/
+  specs/<slug>.md
+  plans/<slug>.md
+  adr/<number>-<slug>.md
+  ideas/<slug>.md
 ```
+
+Forge does not create empty artifact directories or placeholder files just to make Git track them.
 
 Project-local skills usually live in `.agents/skills/` for multi-agent projects. Claude-only projects may use `.claude/skills/` when there is no multi-agent source of truth.

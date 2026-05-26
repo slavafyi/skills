@@ -4,6 +4,8 @@ Route each lesson to the smallest correct artifact.
 
 Do not store repeatable agent behavior rules in generic docs just because they are easy to edit. Use project docs for project facts, requirements, plans, decisions, and handoff state. Use project-local skills for reusable agent behavior.
 
+Create artifact parent directories only when writing a real artifact. A missing empty `docs/specs/`, `docs/plans/`, `docs/adr/`, or `docs/ideas/` directory is not itself a reason to persist anything.
+
 ## Decision tree
 
 - Reusable agent behavior -> project-local skill.

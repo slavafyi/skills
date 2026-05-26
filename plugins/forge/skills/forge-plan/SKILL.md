@@ -19,7 +19,7 @@ Slice a ready spec into verifiable implementation steps. Do not define new requi
 1. Read the active spec, `docs/status.md`, relevant ADRs, project-local skills, and current Git status.
 2. Check that the spec is ready using `references/planning-checklist.md`. Route back to `forge-spec` when requirements, non-goals, or edge cases are missing.
 3. Identify design risks, dependencies, and validation signals before choosing implementation order.
-4. Create or update `docs/plans/<slug>.md` with `references/plan-template.md`.
+4. Create or update `docs/plans/<slug>.md` with `references/plan-template.md`; create `docs/plans/` only as part of writing the plan file.
 5. Split work into vertical slices where each slice has an outcome, acceptance criteria, likely files, validation, dependencies, and stop conditions.
 6. Update `docs/status.md` only when the active continuation point changes.
 
@@ -46,6 +46,7 @@ Next action:
 
 - Do not implement code.
 - Do not change requirements silently; route back to `forge-spec`.
+- Do not create empty artifact directories in advance.
 - Do not plan around symptoms, unclear failures, or unspecified edge cases.
 - Do not create a broad horizontal plan where validation happens only at the end.
 - Do not ignore current uncommitted work.
