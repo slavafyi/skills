@@ -6,7 +6,7 @@ Plugin-specific documentation lives under `plugins/<plugin>/README.md`.
 
 ## Plugins
 
-- `forge` — workflow and project-memory skills for development agents.
+- [forge](./plugins/forge/) — workflow and project-memory skills for development agents.
 
 ## License
 

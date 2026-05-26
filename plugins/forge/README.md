@@ -24,6 +24,37 @@ Every skill should also work on its own: use `forge-fix` for a bug, `forge-revie
 
 Agents should trigger Forge skills from normal user language when the intent matches the skill. Slash commands are a convenience, not the only entrypoint.
 
+## Install
+
+### Codex
+
+```bash
+codex plugin marketplace add slavafyi/skills
+codex plugin add forge@slavafyi
+```
+
+### Claude
+
+```bash
+claude plugin marketplace add slavafyi/skills
+claude plugin install forge@slavafyi
+```
+
+### OpenCode, Pi, and other agents
+
+Use [`npx skills`](https://github.com/vercel-labs/skills) to install portable skills:
+
+```bash
+npx skills add slavafyi/skills
+```
+
+`npx skills` installs skills, not marketplace plugins. In repositories with multiple plugins, it sees the repository's available skills rather than a plugin boundary. To install only Forge-related skills, list the available skills first and select the Forge skill names you want:
+
+```bash
+npx skills add slavafyi/skills --list
+npx skills add slavafyi/skills --skill forge-fix --skill forge-review
+```
+
 ## Principles
 
 Forge skills should be:
