@@ -112,7 +112,7 @@ Stop conditions:
 
 ### 3. Add provider-comment confirmation and remote-visible artifact policy
 
-Status: pending
+Status: completed
 
 Outcome:
 - Skills that may produce provider-facing updates clearly treat provider comments as external mutations that require an ask/confirm step.

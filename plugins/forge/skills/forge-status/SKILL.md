@@ -32,6 +32,12 @@ Maintain `docs/status.md` as the short continuation point for future sessions.
 - Do not overwrite accurate human-authored context.
 - Do not write provider status comments without explicit user confirmation.
 
+## Provider comments
+
+- Treat provider status comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
+- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized status, or full status.
+- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
+
 ## References
 
 - `references/status-format.md`

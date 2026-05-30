@@ -51,6 +51,12 @@ Next action:
 - Do not hide assumptions inside confident recommendations.
 - Do not write provider comments without explicit user confirmation.
 
+## Provider comments
+
+- Treat provider comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
+- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized artifact, or full artifact.
+- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
+
 ## References
 
 - `references/idea-checklist.md`

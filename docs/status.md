@@ -4,10 +4,12 @@ Updated: 2026-05-31
 
 ## Current focus
 
-- Slice 2 of provider issue/PR intake is implemented; ready to add provider-comment confirmation policy in slice 3.
+- Slice 3 of provider issue/PR intake is implemented; ready to sync metadata and run final validation in slice 4.
 
 ## Recent work
 
+- Implemented slice 3 of `docs/plans/provider-issue-pr-intake.md`.
+- Added provider-comment policy to Forge task skills that can produce provider-facing updates: comments are external mutations, require ask/confirm, offer skip/new/update plus summary/full choices, and avoid overclaiming local-only artifact paths.
 - Implemented slice 2 of `docs/plans/provider-issue-pr-intake.md`.
 - Updated common Forge task skills so direct issue/PR references are fetched as context before normal idea/spec/plan/fix/build/test/review/status work.
 - Added direct-entry safeguards for full URLs, shorthand references with unambiguous Git remotes, blocked provider CLI access, vague issues, PR diffs/review feedback, and default PR review artifact behavior.
@@ -22,7 +24,7 @@ Updated: 2026-05-31
 
 ## Next action
 
-- Start slice 3 of `docs/plans/provider-issue-pr-intake.md`: add provider-comment confirmation and remote-visible artifact policy.
+- Start slice 4 of `docs/plans/provider-issue-pr-intake.md`: sync package metadata and validate the workflow documentation.
 
 ## Open questions
 
@@ -31,6 +33,8 @@ Updated: 2026-05-31
 ## Validation
 
 - Passed: `git diff --check`.
+- Passed: targeted search confirmed provider-comment sections include ask/confirm, skip, new/update, summary/full, and remote-visible/local-unpushed path wording.
+- Passed: targeted search found no provider-specific automatic write guidance.
 - Passed: targeted search confirmed direct-entry issue/PR intake wording across `forge-idea`, `forge-spec`, `forge-plan`, `forge-fix`, `forge-build`, `forge-test`, `forge-review`, and `forge-status`.
 - Passed: targeted search found no provider-specific CLI names in direct-entry skill changes.
 - Passed: targeted search confirmed `forge-review` does not create `docs/reviews/` by default.

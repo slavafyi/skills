@@ -59,6 +59,12 @@ Readiness:
 - Do not create `docs/reviews/` by default for PR reviews; update existing Forge artifacts only when durable context needs it.
 - Do not post provider feedback or comments without explicit user confirmation.
 
+## Provider comments
+
+- Treat provider feedback and comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
+- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized review/artifact, or full review/artifact.
+- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
+
 ## References
 
 - `references/review-checklist.md`
