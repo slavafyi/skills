@@ -66,7 +66,7 @@ Allow Forge workflows to start from issue or pull request references in the curr
 - Include PR references in the same first slice for review, summary, continuation from feedback, and optional confirmed comments.
 - Keep generated artifacts in `docs/` as the source of truth.
 - Use the ask tool before writing provider comments, including whether to post a new comment, update a previous comment, post the full artifact, or post a summarized version.
-- Default provider comments to a short summary plus local artifact paths unless the user chooses a full artifact comment.
+- Default provider comments to a short summary. Include artifact paths only when they are expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 - Do not add `docs/reviews/` initially; only create durable review artifacts later if PR reviews reveal context future agents need.
 
 ## Unknowns

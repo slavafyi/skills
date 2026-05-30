@@ -17,7 +17,7 @@ Review the selected changes as a future maintainer. Do not rewrite code unless a
 ## Procedure
 
 1. Identify the review target: working tree diff, files, commit, branch, or PR.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
 3. For PR references, include relevant PR context, changed files or diff information, and review feedback when needed before applying normal review behavior.
 4. Read relevant context: `docs/status.md`, active spec/plan, ADRs, local skills, and validation results.
 5. Inspect tracked and untracked changes. Distinguish user changes from agent changes when possible.

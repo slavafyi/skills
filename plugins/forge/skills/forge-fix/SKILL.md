@@ -17,7 +17,7 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 ## Procedure
 
 1. Read relevant context: user report, `docs/status.md`, active spec/plan, ADRs, local skills, Git status, and current diff.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
 3. Before making persistent repository changes for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
 4. Build a feedback loop with `references/diagnosis-loop.md` before editing production code.
 5. Reproduce the same symptom the user reported or the same validation failure that blocked work.

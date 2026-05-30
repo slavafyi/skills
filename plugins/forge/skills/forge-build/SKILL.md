@@ -17,7 +17,7 @@ Implement one focused slice and prove it works.
 ## Procedure
 
 1. Read the nearest useful context: `docs/status.md`, active plan/spec, ADRs, project-local skills, Git status, and current diff.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
 3. Select exactly one target: user-named task, first pending plan slice, next clear acceptance criterion, issue/PR follow-up, or a small explicit code request.
 4. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
 5. Before making persistent repository changes, follow Branch Safety below and get confirmation when it applies.

@@ -17,7 +17,7 @@ Maintain `docs/status.md` as the short continuation point for future sessions.
 ## Procedure
 
 1. Inspect current state: Git branch/diff, recent commits when useful, status, relevant specs/plans/ADRs, local skills, and current conversation context.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful status context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful status context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
 3. Decide what changed: completed work, active focus, next action, open questions, blockers, validation, and relevant artifacts.
 4. Update `docs/status.md` using `references/status-format.md`.
 5. Keep it concise and remove stale details that would mislead the next session.

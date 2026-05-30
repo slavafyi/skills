@@ -8,6 +8,7 @@ Updated: 2026-05-31
 
 ## Recent work
 
+- Addressed initial `forge-review` findings by aligning the idea note's provider-comment path guidance, adding provider-comment policy to `forge-test`, and adding direct-entry multiple-reference/type-mismatch ask behavior.
 - Implemented slice 4 of `docs/plans/provider-issue-pr-intake.md`.
 - Synced Forge plugin manifests to `0.2.2` and marked the provider issue/PR intake spec, plan, and idea as implemented/done.
 - Implemented slice 3 of `docs/plans/provider-issue-pr-intake.md`.
@@ -33,6 +34,9 @@ Updated: 2026-05-31
 ## Validation
 
 - Passed: `git diff --check`.
+- Passed: targeted search confirmed stale provider-comment artifact-path wording was removed from the idea note.
+- Passed: targeted search confirmed direct-entry skills mention multiple-reference/type-mismatch ask behavior.
+- Passed: targeted search confirmed `forge-test` has provider-comment confirmation, summary/full, and remote-visible path policy.
 - Passed: Forge manifest version consistency check with `python -c`; both Forge plugin manifests are `0.2.2`.
 - Passed: targeted search found no provider-specific CLI names in `plugins/forge/skills`.
 - Passed: manual review confirmed provider adapter/registry/command-table references in skill files are prohibitions, not implementations.
