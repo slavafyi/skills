@@ -4,10 +4,13 @@ Updated: 2026-05-31
 
 ## Current focus
 
-- Slice 1 of provider issue/PR intake is implemented; ready to start direct-entry skill updates in slice 2.
+- Slice 2 of provider issue/PR intake is implemented; ready to add provider-comment confirmation policy in slice 3.
 
 ## Recent work
 
+- Implemented slice 2 of `docs/plans/provider-issue-pr-intake.md`.
+- Updated common Forge task skills so direct issue/PR references are fetched as context before normal idea/spec/plan/fix/build/test/review/status work.
+- Added direct-entry safeguards for full URLs, shorthand references with unambiguous Git remotes, blocked provider CLI access, vague issues, PR diffs/review feedback, and default PR review artifact behavior.
 - Implemented slice 1 of `docs/plans/provider-issue-pr-intake.md`.
 - Updated `forge-next` to treat issue and PR references as context intake before central routing, including URL-first behavior, shorthand Git-remote resolution, and ask-on-ambiguity/blocker behavior.
 - Forge plugin manifest version bump remains pending before merge.
@@ -19,7 +22,7 @@ Updated: 2026-05-31
 
 ## Next action
 
-- Start slice 2 of `docs/plans/provider-issue-pr-intake.md`: add direct-entry issue and PR intake to common Forge task skills.
+- Start slice 3 of `docs/plans/provider-issue-pr-intake.md`: add provider-comment confirmation and remote-visible artifact policy.
 
 ## Open questions
 
@@ -28,10 +31,13 @@ Updated: 2026-05-31
 ## Validation
 
 - Passed: `git diff --check`.
+- Passed: targeted search confirmed direct-entry issue/PR intake wording across `forge-idea`, `forge-spec`, `forge-plan`, `forge-fix`, `forge-build`, `forge-test`, `forge-review`, and `forge-status`.
+- Passed: targeted search found no provider-specific CLI names in direct-entry skill changes.
+- Passed: targeted search confirmed `forge-review` does not create `docs/reviews/` by default.
 - Passed: targeted search found no provider-specific CLI names in `plugins/forge/skills/forge-next`.
 - Passed: targeted search confirmed the changed `forge-next` guidance includes URL-first behavior, shorthand behavior, ask-on-ambiguity, provider CLI blocker handling, and normal Forge routing.
 - Passed: manual prompt walkthroughs for `check issue #2 and write a spec` and `review PR #5` through `forge-next` routing.
-- Not run: package validation; only Markdown skill guidance changed in the committed slice. Forge manifest bump is intentionally left uncommitted for before merge.
+- Not run: package validation; only Markdown skill guidance changed in the committed slices. Forge manifest bump is intentionally left uncommitted until the metadata slice.
 
 ## Relevant artifacts
 

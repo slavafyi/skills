@@ -12,19 +12,20 @@ Implement one focused slice and prove it works.
 - The next implementation target is explicit or selected from a ready plan/spec.
 - One small vertical slice can be coded and validated without inventing requirements.
 - The user asks to implement a clear, bounded change.
-- The user says "Implement this", "Build the next slice", "Start the plan", or "Make the change".
+- The user says "Implement this", "Build the next slice", "Start the plan", "Make the change", or asks to implement an issue/PR follow-up.
 
 ## Procedure
 
 1. Read the nearest useful context: `docs/status.md`, active plan/spec, ADRs, project-local skills, Git status, and current diff.
-2. Select exactly one target: user-named task, first pending plan slice, next clear acceptance criterion, or a small explicit code request.
-3. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
-4. Before making persistent repository changes, follow Branch Safety below and get confirmation when it applies.
-5. Define the testing and feedback signal before editing: targeted automated test, typecheck, build, lint, manual check, or runtime check. Use `forge-test` first when the correct test portfolio, layer, seam, TDD approach, contract, property test, real-dependency strategy, or CI tier is unclear.
-6. Implement the smallest complete change for the selected slice.
-7. When validation fails or a surprising edge case appears, stop and diagnose before editing further. Identify the observed signal, expected behavior, likely root cause, and whether the spec/design covers it.
-8. Use `forge-fix` for reproducible broken behavior; use `forge-test` for missing or weak automated proof; return to `forge-spec` or the user when the edge case is unspecified or reveals a design conflict.
-9. Validate, update plan/status when meaningful, and report changed files plus exact validation results.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+3. Select exactly one target: user-named task, first pending plan slice, next clear acceptance criterion, issue/PR follow-up, or a small explicit code request.
+4. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
+5. Before making persistent repository changes, follow Branch Safety below and get confirmation when it applies.
+6. Define the testing and feedback signal before editing: targeted automated test, typecheck, build, lint, manual check, or runtime check. Use `forge-test` first when the correct test portfolio, layer, seam, TDD approach, contract, property test, real-dependency strategy, or CI tier is unclear.
+7. Implement the smallest complete change for the selected slice.
+8. When validation fails or a surprising edge case appears, stop and diagnose before editing further. Identify the observed signal, expected behavior, likely root cause, and whether the spec/design covers it.
+9. Use `forge-fix` for reproducible broken behavior; use `forge-test` for missing or weak automated proof; return to `forge-spec` or the user when the edge case is unspecified or reveals a design conflict.
+10. Validate, update plan/status when meaningful, and report changed files plus exact validation results.
 
 ## Branch Safety
 
@@ -68,6 +69,7 @@ Next action:
 - Do not claim validation passed unless it actually ran and passed.
 - Do not add broad, brittle, over-mocked, or implementation-coupled tests when a more stable proof exists; route to `forge-test` when unsure.
 - Do not create PRs, merge, deploy, or run destructive commands unless explicitly instructed.
+- Do not write provider comments without explicit user confirmation.
 
 ## References
 

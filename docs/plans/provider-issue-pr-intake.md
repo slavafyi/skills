@@ -60,7 +60,7 @@ Stop conditions:
 
 ### 2. Add direct-entry issue and PR intake to common Forge task skills
 
-Status: pending
+Status: completed
 
 Outcome:
 - Common task skills know that issue and PR references in the user prompt should be fetched as context before normal Forge work proceeds.

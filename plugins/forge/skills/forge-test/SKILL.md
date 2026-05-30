@@ -11,20 +11,21 @@ Design tests that prove behavior through stable contracts, not accidental implem
 
 - The user asks to add tests, improve coverage, create a test plan, use TDD, or choose unit/component/integration/contract/E2E coverage.
 - A spec, plan, build, fix, or review needs a clearer automated testing strategy before work can be accepted.
-- A bug needs regression proof after reproduction and root-cause diagnosis.
+- A bug or issue/PR feedback needs regression proof after reproduction and root-cause diagnosis.
 - Existing tests are missing, brittle, flaky, too broad, too slow, over-mocked, or testing the wrong behavior.
 - Real dependencies, API contracts, UI behavior, accessibility, visual output, or LLM/agent behavior need compatibility or regression protection.
 
 ## Procedure
 
 1. Read the relevant request, active artifacts, current diff, existing tests, CI config, manifests, and project instructions.
-2. Identify the behavior, risk, and observable contract. If behavior is underspecified, route to `forge-spec` before encoding assumptions.
-3. Discover existing project test conventions before adding frameworks, tools, folders, dependencies, or CI lanes. Use `references/platform-discovery.md`.
-4. Choose a portfolio, mode, layer, and seam that match the architecture and risk. Do not apply the classic pyramid mechanically. Use `references/testing-strategy.md`.
-5. Choose dependency fidelity deliberately: real dependency, Testcontainers, official fake/emulator, fake, stub, mock, or manual fallback. Use `references/test-doubles-and-contracts.md` and `references/testcontainers-policy.md`.
-6. Choose the working loop: TDD, regression-first, characterization, property/fuzz, contract, specialized, or ordinary test update. Use the relevant references.
-7. Keep tests hermetic, deterministic, readable, and assigned to an appropriate CI tier. Use `references/flakiness-and-determinism.md`, `references/ci-and-coverage-policy.md`, and `references/test-design-checklist.md`.
-8. Add or update the smallest meaningful tests, run the smallest useful command first, and report observed validation, missing proof, and follow-up routes. Use `references/test-output-format.md` when detailed output is helpful.
+2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content.
+3. Identify the behavior, risk, and observable contract. If behavior is underspecified, route to `forge-spec` before encoding assumptions.
+4. Discover existing project test conventions before adding frameworks, tools, folders, dependencies, or CI lanes. Use `references/platform-discovery.md`.
+5. Choose a portfolio, mode, layer, and seam that match the architecture and risk. Do not apply the classic pyramid mechanically. Use `references/testing-strategy.md`.
+6. Choose dependency fidelity deliberately: real dependency, Testcontainers, official fake/emulator, fake, stub, mock, or manual fallback. Use `references/test-doubles-and-contracts.md` and `references/testcontainers-policy.md`.
+7. Choose the working loop: TDD, regression-first, characterization, property/fuzz, contract, specialized, or ordinary test update. Use the relevant references.
+8. Keep tests hermetic, deterministic, readable, and assigned to an appropriate CI tier. Use `references/flakiness-and-determinism.md`, `references/ci-and-coverage-policy.md`, and `references/test-design-checklist.md`.
+9. Add or update the smallest meaningful tests, run the smallest useful command first, and report observed validation, missing proof, and follow-up routes. Use `references/test-output-format.md` when detailed output is helpful.
 
 ## Constraints
 
@@ -36,6 +37,7 @@ Design tests that prove behavior through stable contracts, not accidental implem
 - Do not silently weaken assertions, delete tests, broaden snapshots, or quarantine failures to make a build green.
 - Do not claim coverage, validation, expected failure, or regression proof that was not observed.
 - Do not make persistent repository changes on a protected, shared, or mismatched branch without explicit user confirmation or a user-approved branch/worktree.
+- Do not write provider comments without explicit user confirmation.
 
 ## Output
 
