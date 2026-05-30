@@ -29,6 +29,15 @@ Acceptance criteria covered:
 Likely files or modules:
 - ...
 
+Test strategy:
+- Portfolio fit:
+- Layer:
+- Seam:
+- Regression needed:
+- Contract/property/specialized test needed:
+- Testcontainers or real dependency needed:
+- CI tier:
+
 Validation:
 - ...
 
@@ -53,6 +62,15 @@ Acceptance criteria covered:
 
 Likely files or modules:
 - ...
+
+Test strategy:
+- Portfolio fit:
+- Layer:
+- Seam:
+- Regression needed:
+- Contract/property/specialized test needed:
+- Testcontainers or real dependency needed:
+- CI tier:
 
 Validation:
 - ...

@@ -23,7 +23,7 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 5. Form falsifiable hypotheses and test one variable at a time until there is evidence for the root cause.
 6. Before changing production code, record the observed behavior, expected behavior, reproduction path, evidence for the suspected root cause, and smallest safe fix.
 7. If the cause is a missing requirement, unclear edge case, or design conflict, stop and route to `forge-spec` or the user instead of inventing behavior or patching the symptom.
-8. Add regression proof when there is a correct seam, using `references/regression-policy.md`.
+8. Add regression proof when there is a correct seam, using `references/regression-policy.md`. Use `forge-test` when choosing the regression layer, seam, fixture, TDD loop, contract, property test, real-dependency strategy, or CI tier is non-trivial.
 9. Make the smallest root-cause fix, remove temporary probes, re-run validation, and update status/plan when meaningful.
 
 ## Branch Safety
@@ -73,6 +73,7 @@ Next action:
 - Do not change multiple unrelated things at once.
 - Do not leave debug probes behind.
 - Do not claim the bug is fixed without re-running the reproduction or explaining why that was impossible.
+- Do not write a regression test that only matches the fix implementation rather than the original failing behavior.
 
 ## References
 

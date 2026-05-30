@@ -20,10 +20,10 @@ Implement one focused slice and prove it works.
 2. Select exactly one target: user-named task, first pending plan slice, next clear acceptance criterion, or a small explicit code request.
 3. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
 4. Before making persistent repository changes, follow Branch Safety below and get confirmation when it applies.
-5. Define the feedback signal before editing: test, typecheck, build, lint, manual check, or runtime check.
+5. Define the testing and feedback signal before editing: targeted automated test, typecheck, build, lint, manual check, or runtime check. Use `forge-test` first when the correct test portfolio, layer, seam, TDD approach, contract, property test, real-dependency strategy, or CI tier is unclear.
 6. Implement the smallest complete change for the selected slice.
 7. When validation fails or a surprising edge case appears, stop and diagnose before editing further. Identify the observed signal, expected behavior, likely root cause, and whether the spec/design covers it.
-8. Use `forge-fix` for reproducible broken behavior; return to `forge-spec` or the user when the edge case is unspecified or reveals a design conflict.
+8. Use `forge-fix` for reproducible broken behavior; use `forge-test` for missing or weak automated proof; return to `forge-spec` or the user when the edge case is unspecified or reveals a design conflict.
 9. Validate, update plan/status when meaningful, and report changed files plus exact validation results.
 
 ## Branch Safety
@@ -66,6 +66,7 @@ Next action:
 - Do not make persistent repository changes on a protected, shared, or mismatched branch without explicit user confirmation or a user-approved branch/worktree.
 - Do not rewrite unrelated code or discard user changes.
 - Do not claim validation passed unless it actually ran and passed.
+- Do not add broad, brittle, over-mocked, or implementation-coupled tests when a more stable proof exists; route to `forge-test` when unsure.
 - Do not create PRs, merge, deploy, or run destructive commands unless explicitly instructed.
 
 ## References

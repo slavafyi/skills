@@ -8,10 +8,10 @@ Common flows:
 
 ```text
 Feature flow:
-forge-idea -> forge-spec -> forge-plan -> forge-build -> forge-review -> forge-status
+forge-idea -> forge-spec -> forge-plan -> forge-test -> forge-build -> forge-review -> forge-status
 
 Bug flow:
-forge-fix -> forge-review -> forge-status
+forge-fix -> forge-test -> forge-review -> forge-status
 
 Session learning flow:
 user correction -> forge-retro -> local skill / spec / plan / ADR / status update
@@ -85,6 +85,7 @@ Do not patch symptoms. Find the real cause. If the cause is an incomplete spec, 
 | `forge-idea` | Explore and pressure-test a raw idea before requirements. |
 | `forge-spec` | Define what should change and how success is judged. |
 | `forge-plan` | Slice an approved spec into safe, verifiable implementation steps. |
+| `forge-test` | Design, add, or improve automated tests, contracts, regression proof, Testcontainers strategy, or CI test budget for a bounded behavior. |
 | `forge-build` | Implement one small verified slice. |
 | `forge-fix` | Reproduce, diagnose, and fix the root cause of a bug. |
 | `forge-review` | Review a diff or completed slice against project intent. |

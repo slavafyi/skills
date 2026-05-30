@@ -19,10 +19,10 @@ Review the selected changes as a future maintainer. Do not rewrite code unless a
 1. Identify the review target: working tree diff, files, commit, branch, or PR.
 2. Read relevant context: `docs/status.md`, active spec/plan, ADRs, local skills, and validation results.
 3. Inspect tracked and untracked changes. Distinguish user changes from agent changes when possible.
-4. Review with `references/review-checklist.md`, prioritizing correctness, requirements, data safety, failure modes, tests, and maintainability.
+4. Review with `references/review-checklist.md`, prioritizing correctness, requirements, data safety, failure modes, test adequacy, and maintainability.
 5. Treat symptom patches and unspecified edge-case behavior as design issues, not style nits.
 6. Report findings with `references/output-format.md`.
-7. Route follow-up: `forge-fix` for confirmed bugs, `forge-spec` for missing requirements, `forge-plan` for sequencing issues, `forge-adr` for durable architecture choices, `forge-status` after meaningful changes.
+7. Route follow-up: `forge-fix` for confirmed bugs, `forge-test` for missing or weak automated proof, `forge-spec` for missing requirements, `forge-plan` for sequencing issues, `forge-adr` for durable architecture choices, `forge-status` after meaningful changes.
 
 ## Output
 
@@ -50,6 +50,7 @@ Readiness:
 
 - Do not approve work that was not inspected.
 - Do not claim validation was run unless it was run.
+- Do not treat claimed validation from another agent or artifact as observed validation unless command output, logs, or direct evidence are available.
 - Do not bury correctness issues under style comments.
 - Do not rewrite the diff unless asked.
 - Do not merge, deploy, push, or mark a PR ready unless explicitly instructed.

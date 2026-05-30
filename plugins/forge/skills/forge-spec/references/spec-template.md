@@ -52,11 +52,17 @@ Status: draft | ready | implemented | superseded
 - Security/privacy:
 - Performance:
 
-## Validation expectations
+## Test and validation expectations
 
-- Targeted checks:
-- Broader regression checks:
+- Small/unit tests:
+- Component/integration/real dependency tests:
+- Contract/schema compatibility tests:
+- Property/fuzz tests:
+- E2E/broad-stack tests:
+- Specialized tests (visual, accessibility, LLM evals, performance, security):
+- Regression proof:
 - Manual checks:
+- Out of scope:
 
 ## Open questions
 
