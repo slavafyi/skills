@@ -19,9 +19,10 @@ Determine the current project state and route to the smallest safe next skill or
 1. Find the repository root, preferring the Git root.
 2. Read the current work state with `references/context-checklist.md`.
 3. If `docs/status.md` is missing, route to `forge-init`.
-4. Build a compact picture: current focus, recent work, active spec/plan/ADR, uncommitted changes, blockers, validation state, and next likely action.
-5. Use `references/routing.md` to choose the next skill.
-6. Act only when the next action is unambiguous. Otherwise ask one short question with the most likely options.
+4. If the user prompt includes an issue or PR reference, resolve and read it as routing context before choosing a skill.
+5. Build a compact picture: current focus, recent work, active spec/plan/ADR, uncommitted changes, blockers, validation state, issue/PR context when relevant, and next likely action.
+6. Use `references/routing.md` to choose the next skill.
+7. Act only when the next action is unambiguous. Otherwise ask one short question with the most likely options.
 
 ## Output
 

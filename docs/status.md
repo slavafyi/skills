@@ -1,41 +1,40 @@
 # Project status
 
-Updated: 2026-05-26
+Updated: 2026-05-31
 
 ## Current focus
 
-- Lazy artifact folders are implemented.
+- Slice 1 of provider issue/PR intake is implemented; ready to start direct-entry skill updates in slice 2.
 
 ## Recent work
 
-- Created a ready spec for lazy artifact folder behavior.
-- Refined the spec so initialization creates no empty artifact directories, not even local-only convenience dirs.
-- Created an active implementation plan for the lazy artifact folders change.
-- Updated Forge initialization, layout, and artifact-writing docs for lazy artifact directories.
-- Removed `docs/adr/.gitkeep` and bumped Forge plugin manifests to `0.1.6`.
-- Project-centered initialization wording remains implemented.
+- Implemented slice 1 of `docs/plans/provider-issue-pr-intake.md`.
+- Updated `forge-next` to treat issue and PR references as context intake before central routing, including URL-first behavior, shorthand Git-remote resolution, and ask-on-ambiguity/blocker behavior.
+- Forge plugin manifest version bump remains pending before merge.
+- Created a ready spec for lightweight provider issue and PR intake.
+- Created an active implementation plan for lightweight provider issue and PR intake.
+- Refined provider comment behavior so artifact paths are only advertised when expected to exist remotely.
+- Marked the related idea note ready for spec and linked the new spec.
+- Previous lazy artifact folder work is complete; no follow-up is active from that slice.
 
 ## Next action
 
-- No active follow-up; choose the next project task from a new request.
+- Start slice 2 of `docs/plans/provider-issue-pr-intake.md`: add direct-entry issue and PR intake to common Forge task skills.
 
 ## Open questions
 
-- None recorded.
+- None blocking; real-project testing may reveal provider-specific patterns worth documenting later.
 
 ## Validation
 
-- Passed: no `.gitkeep` files found in the workspace.
-- Passed: targeted Forge docs search found no `.gitkeep`, old default-artifact wording, or required empty-directory wording.
-- Passed: both Forge plugin manifests are `0.1.6`.
 - Passed: `git diff --check`.
-- Passed: maintainer review found no blocking or non-blocking issues.
-- Not run: test suite because this was a documentation and metadata change.
+- Passed: targeted search found no provider-specific CLI names in `plugins/forge/skills/forge-next`.
+- Passed: targeted search confirmed the changed `forge-next` guidance includes URL-first behavior, shorthand behavior, ask-on-ambiguity, provider CLI blocker handling, and normal Forge routing.
+- Passed: manual prompt walkthroughs for `check issue #2 and write a spec` and `review PR #5` through `forge-next` routing.
+- Not run: package validation; only Markdown skill guidance changed in the committed slice. Forge manifest bump is intentionally left uncommitted for before merge.
 
 ## Relevant artifacts
 
-- Spec: `docs/specs/lazy-artifact-folders.md`
-- Plan: `docs/plans/lazy-artifact-folders.md`
-- Related spec: `docs/specs/project-centered-init-wording.md`
-- Related plan: `docs/plans/project-centered-init-wording.md`
-- ADRs: none yet.
+- Idea: `docs/ideas/provider-issue-intake.md`
+- Spec: `docs/specs/provider-issue-pr-intake.md`
+- Plan: `docs/plans/provider-issue-pr-intake.md`

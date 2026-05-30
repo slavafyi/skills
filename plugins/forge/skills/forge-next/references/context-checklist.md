@@ -22,7 +22,18 @@ Use this checklist to build enough context for the next action.
 - app framework config
 - test config
 - CI config
-- issue or PR context, if the user provided it
+- issue or PR context, if the user provided a URL or shorthand reference
+
+## Issue and PR reference intake
+
+Treat issue and PR references as context for normal Forge routing, not as a separate workflow.
+
+- Full issue or PR URLs are authoritative for provider and repository context, even when the current Git remote points somewhere else.
+- Shorthand references such as `#2`, `issue #2`, `PR #5`, or `pull request #5` require the current Git repository. Inspect remotes and use the obvious current project remote only when it is unambiguous.
+- If shorthand resolution has no Git repository, no usable remote, multiple plausible remotes, or unclear provider context, ask for a full URL or repository instead of guessing.
+- Use provider CLI tooling, CLI docs, built-in help, and command output to learn how to fetch the minimum useful issue or PR context. Do not maintain provider adapters or provider-specific command tables here.
+- If the needed provider CLI is unavailable, unauthenticated, inaccessible, or blocked, report the concrete blocker and ask for CLI setup, a pasted issue/PR summary, a full URL, or another context source.
+- If multiple issue or PR references appear and the user's primary target is unclear, ask which reference should drive the next action.
 
 ## Avoid
 
