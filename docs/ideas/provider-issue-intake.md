@@ -1,7 +1,7 @@
 # Idea: Provider issue and PR intake for Forge workflows
 
 Created: 2026-05-31
-Status: ready-for-spec
+Status: implemented
 
 ## Summary
 

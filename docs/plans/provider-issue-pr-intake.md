@@ -1,7 +1,7 @@
 # Plan: Provider issue and PR intake
 
 Created: 2026-05-31
-Status: active
+Status: done
 
 Spec: `docs/specs/provider-issue-pr-intake.md`
 
@@ -162,7 +162,7 @@ Stop conditions:
 
 ### 4. Sync package metadata and validate the workflow documentation
 
-Status: pending
+Status: completed
 
 Outcome:
 - Forge plugin manifests are bumped consistently after skill/package documentation changes.

@@ -1,7 +1,7 @@
 # Spec: Provider issue and PR intake
 
 Created: 2026-05-31
-Status: ready
+Status: implemented
 
 ## Goal
 
@@ -65,18 +65,18 @@ Forge project artifacts remain the durable source of truth. Provider issues and 
 
 ## Acceptance criteria
 
-- [ ] Given a prompt like `check issue #2 and write a spec` in a repository with an unambiguous provider remote, the agent resolves `#2`, fetches the issue through the provider CLI, creates or updates the appropriate `docs/specs/...` artifact, and asks before posting any provider comment.
-- [ ] Given a full issue URL, the agent uses that URL's provider and repository even if the current repository remote is different.
-- [ ] Given `fix bug in issue #1`, the agent fetches the issue, routes to the bug-fix workflow when the issue is actionable, and asks for missing context or creates requirements first when the issue is too vague.
-- [ ] Given `review PR #5`, the agent resolves the PR, fetches relevant PR context and diff information through provider CLI tooling, routes to review behavior, and asks before posting provider feedback.
-- [ ] Given a shorthand reference outside a Git repository, without remotes, or with ambiguous remotes, the agent asks for the repository or full URL instead of guessing.
-- [ ] Given a missing or unauthenticated provider CLI, the agent reports the concrete blocker and does not invent issue or PR content.
-- [ ] Any generated spec, plan, idea note, status update, or other durable Forge output is written under local `docs/` according to existing conventions.
-- [ ] Provider comments are never created or updated unless the user confirms through the ask/confirm step.
-- [ ] The provider comment ask step includes choices for no provider comment, summarized artifact, full artifact, and update versus new comment when update is feasible.
-- [ ] Provider comments include artifact paths only when the files are expected to be visible in the relevant remote branch or provider context; local-only artifacts are not presented as remote-accessible paths.
-- [ ] The first implementation does not add hard-coded provider adapters, provider registries, or provider-specific command tables.
-- [ ] PR support does not create `docs/reviews/` by default.
+- [x] Given a prompt like `check issue #2 and write a spec` in a repository with an unambiguous provider remote, the agent resolves `#2`, fetches the issue through the provider CLI, creates or updates the appropriate `docs/specs/...` artifact, and asks before posting any provider comment.
+- [x] Given a full issue URL, the agent uses that URL's provider and repository even if the current repository remote is different.
+- [x] Given `fix bug in issue #1`, the agent fetches the issue, routes to the bug-fix workflow when the issue is actionable, and asks for missing context or creates requirements first when the issue is too vague.
+- [x] Given `review PR #5`, the agent resolves the PR, fetches relevant PR context and diff information through provider CLI tooling, routes to review behavior, and asks before posting provider feedback.
+- [x] Given a shorthand reference outside a Git repository, without remotes, or with ambiguous remotes, the agent asks for the repository or full URL instead of guessing.
+- [x] Given a missing or unauthenticated provider CLI, the agent reports the concrete blocker and does not invent issue or PR content.
+- [x] Any generated spec, plan, idea note, status update, or other durable Forge output is written under local `docs/` according to existing conventions.
+- [x] Provider comments are never created or updated unless the user confirms through the ask/confirm step.
+- [x] The provider comment ask step includes choices for no provider comment, summarized artifact, full artifact, and update versus new comment when update is feasible.
+- [x] Provider comments include artifact paths only when the files are expected to be visible in the relevant remote branch or provider context; local-only artifacts are not presented as remote-accessible paths.
+- [x] The first implementation does not add hard-coded provider adapters, provider registries, or provider-specific command tables.
+- [x] PR support does not create `docs/reviews/` by default.
 
 ## Behavior details
 
