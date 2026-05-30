@@ -45,24 +45,11 @@ A useful property test usually has:
 - No crash / no panic: invalid inputs fail safely with documented errors.
 - Authorization safety: generated unauthorized cases never gain access.
 
-## Libraries by ecosystem
-
-Prefer the project's existing property/fuzz tool when present. Common options include:
-
-- Python: Hypothesis.
-- JavaScript/TypeScript: fast-check.
-- JVM: jqwik, junit-quickcheck, ScalaCheck, Kotest property testing.
-- Rust: proptest, quickcheck.
-- Haskell: QuickCheck, Hedgehog.
-- Elixir: StreamData, PropCheck.
-- .NET: FsCheck.
-- API schemas: Schemathesis or project-approved OpenAPI/GraphQL fuzzing tools.
-
-Do not add a property-testing library without checking project conventions and asking when dependency policy is unclear.
-
 ## Agent rules
 
 - Start with one or two high-value properties, not a giant generated suite.
+- Prefer the project's existing property or fuzz testing tool when present.
+- Do not add a property-testing library without checking project conventions and asking when dependency policy is unclear.
 - Keep generated cases fast and hermetic.
 - Avoid over-filtering generated values; design better generators instead.
 - Record the seed/counterexample when a failure appears.
