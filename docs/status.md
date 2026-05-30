@@ -4,10 +4,11 @@ Updated: 2026-05-31
 
 ## Current focus
 
-- Provider issue/PR intake implementation is complete; ready for `forge-review`.
+- Provider issue/PR intake implementation is complete and reviewed.
 
 ## Recent work
 
+- Re-ran `forge-review` after fixes; no blocking or important non-blocking issues remain.
 - Addressed initial `forge-review` findings by aligning the idea note's provider-comment path guidance, adding provider-comment policy to `forge-test`, and adding direct-entry multiple-reference/type-mismatch ask behavior.
 - Implemented slice 4 of `docs/plans/provider-issue-pr-intake.md`.
 - Synced Forge plugin manifests to `0.2.2` and marked the provider issue/PR intake spec, plan, and idea as implemented/done.
@@ -25,7 +26,7 @@ Updated: 2026-05-31
 
 ## Next action
 
-- Run `forge-review` on the completed provider issue/PR intake implementation.
+- No implementation follow-up is active; push the branch or open a PR when ready.
 
 ## Open questions
 
@@ -33,6 +34,7 @@ Updated: 2026-05-31
 
 ## Validation
 
+- Passed: `forge-review` re-run on `main...HEAD`; readiness is `Ready`.
 - Passed: `git diff --check`.
 - Passed: targeted search confirmed stale provider-comment artifact-path wording was removed from the idea note.
 - Passed: targeted search confirmed direct-entry skills mention multiple-reference/type-mismatch ask behavior.
