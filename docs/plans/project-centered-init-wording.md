@@ -1,7 +1,7 @@
 # Plan: Project-centered initialization wording
 
 Created: 2026-05-26
-Status: done
+Status: done (partially superseded by `docs/specs/lazy-artifact-folders.md`)
 
 Spec: `docs/specs/project-centered-init-wording.md`
 
@@ -60,7 +60,7 @@ Likely files or modules:
 
 Validation:
 - Confirm the guidance distinguishes project-facing generated text from internal Forge documentation.
-- Confirm the init procedure still creates only `docs/status.md`, `docs/specs/`, and `docs/adr/` by default.
+- Superseded validation expectation: this plan originally expected init to create only `docs/status.md`, `docs/specs/`, and `docs/adr/` by default. That expectation was superseded by `docs/specs/lazy-artifact-folders.md`; init now creates only `docs/status.md`, and `docs/specs/` / `docs/adr/` are lazy artifact folders.
 
 Dependencies:
 - Slice 1 wording should exist first so the rule references concrete examples.
