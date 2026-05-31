@@ -18,7 +18,7 @@ Design tests that prove behavior through stable contracts, not accidental implem
 ## Procedure
 
 1. Read the relevant request, active artifacts, current diff, existing tests, CI config, manifests, and project instructions.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. Identify the behavior, risk, and observable contract. If behavior is underspecified, route to `forge-spec` before encoding assumptions.
 4. Discover existing project test conventions before adding frameworks, tools, folders, dependencies, or CI lanes. Use `references/platform-discovery.md`.
 5. Choose a portfolio, mode, layer, and seam that match the architecture and risk. Do not apply the classic pyramid mechanically. Use `references/testing-strategy.md`.
@@ -37,13 +37,6 @@ Design tests that prove behavior through stable contracts, not accidental implem
 - Do not silently weaken assertions, delete tests, broaden snapshots, or quarantine failures to make a build green.
 - Do not claim coverage, validation, expected failure, or regression proof that was not observed.
 - Do not make persistent repository changes on a protected, shared, or mismatched branch without explicit user confirmation or a user-approved branch/worktree.
-- Do not write provider comments without explicit user confirmation.
-
-## Provider comments
-
-- Do not post provider comments by default. If the user explicitly asks to mirror test strategy or results to a provider thread, treat it as an external mutation and use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized test result/strategy, or full test result/strategy.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## Output
 

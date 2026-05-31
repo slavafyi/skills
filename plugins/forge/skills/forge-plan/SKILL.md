@@ -17,7 +17,7 @@ Slice a ready spec into verifiable implementation steps. Do not define new requi
 ## Procedure
 
 1. Read the active spec, `docs/status.md`, relevant ADRs, project-local skills, and current Git status.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. Check that the spec is ready using `references/planning-checklist.md`. Route back to `forge-spec` when requirements, non-goals, or edge cases are missing.
 4. Identify design risks, dependencies, and validation signals before choosing implementation order.
 5. Create or update `docs/plans/<slug>.md` with `references/plan-template.md`; create `docs/plans/` only as part of writing the plan file.
@@ -51,13 +51,6 @@ Next action:
 - Do not plan around symptoms, unclear failures, or unspecified edge cases.
 - Do not create a broad horizontal plan where validation happens only at the end.
 - Do not ignore current uncommitted work.
-- Do not write provider comments without explicit user confirmation.
-
-## Provider comments
-
-- Treat provider comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized artifact, or full artifact.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## References
 

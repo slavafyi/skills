@@ -17,7 +17,7 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 ## Procedure
 
 1. Read relevant context: user report, `docs/status.md`, active spec/plan, ADRs, local skills, Git status, and current diff.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. Before making persistent repository changes for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
 4. Build a feedback loop with `references/diagnosis-loop.md` before editing production code.
 5. Reproduce the same symptom the user reported or the same validation failure that blocked work.
@@ -75,13 +75,6 @@ Next action:
 - Do not leave debug probes behind.
 - Do not claim the bug is fixed without re-running the reproduction or explaining why that was impossible.
 - Do not write a regression test that only matches the fix implementation rather than the original failing behavior.
-- Do not write provider comments without explicit user confirmation.
-
-## Provider comments
-
-- Treat provider comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized artifact, or full artifact.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## References
 

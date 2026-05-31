@@ -1,7 +1,9 @@
 # Idea: Provider issue and PR intake for Forge workflows
 
 Created: 2026-05-31
-Status: implemented
+Status: superseded
+
+Superseded by: `docs/ideas/lightweight-provider-issue-pr-intake.md`
 
 ## Summary
 

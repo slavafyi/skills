@@ -1,7 +1,9 @@
 # Spec: Provider issue and PR intake
 
 Created: 2026-05-31
-Status: implemented
+Status: superseded
+
+Superseded by: `docs/specs/lightweight-provider-issue-pr-intake.md`
 
 ## Goal
 

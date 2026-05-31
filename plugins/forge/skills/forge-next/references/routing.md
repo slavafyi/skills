@@ -23,17 +23,17 @@ If there are uncommitted changes:
 
 If the user prompt includes an issue or PR URL or shorthand reference:
 
-- resolve and read the referenced provider context before choosing the Forge skill;
-- treat a full URL as the authoritative provider and repository, regardless of the current repository remote;
-- resolve shorthand references such as `#2`, `issue #2`, `PR #5`, or `pull request #5` relative to the current Git repository only when remotes make the provider and repository unambiguous;
-- ask for a full URL or repository when shorthand resolution is outside a Git repository, has no usable remote, or has ambiguous remotes;
+- fetch the referenced context before choosing the Forge skill;
+- treat a full URL as the authoritative provider and repository;
+- resolve shorthand references such as `#2`, `issue #2`, `PR #5`, or `pull request #5` only when the current Git repository and remote are unambiguous;
+- ask for a full URL or repository when shorthand resolution is ambiguous or blocked;
 - use provider CLI documentation, `--help`, and command output to determine how to fetch context, without adding provider adapters, registries, or provider-specific command tables;
 - report a concrete blocker when the needed provider CLI is missing, unauthenticated, or inaccessible, and ask for setup or pasted context instead of inventing issue or PR details;
 - fetch only the minimum useful context needed for routing, such as title, body, state, URL, relevant metadata, recent discussion, changed files, or diff information when relevant.
 
 After intake, route through the normal Forge responsibilities:
 
-- issue context usually feeds `forge-idea`, `forge-spec`, `forge-plan`, `forge-fix`, `forge-build`, `forge-status`, or `forge-review`, depending on the user's intent and how actionable the issue is;
+- issue context usually feeds `forge-idea`, `forge-spec`, `forge-plan`, `forge-fix`, `forge-build`, `forge-status`, or `forge-review`;
 - PR context usually feeds `forge-review`, summary, continuation from feedback, implementation follow-up, or `forge-status` behavior;
 - if provider context contradicts the user's wording, briefly state the resolved type and ask when it changes the expected route.
 

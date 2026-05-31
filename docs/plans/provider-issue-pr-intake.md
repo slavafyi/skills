@@ -1,7 +1,9 @@
 # Plan: Provider issue and PR intake
 
 Created: 2026-05-31
-Status: done
+Status: superseded
+
+Superseded by: `docs/plans/lightweight-provider-issue-pr-intake.md`
 
 Spec: `docs/specs/provider-issue-pr-intake.md`
 

@@ -12,12 +12,12 @@ Review the selected changes as a future maintainer. Do not rewrite code unless a
 - The user asks for review, self-review, PR review, or inspection of current changes.
 - A diff, branch, commit, or completed slice needs checking against project intent.
 - Readiness, validation, maintainability, or compliance with specs/ADRs/local skills is uncertain.
-- The user says "Review this", "Self-review", "Check the diff", "Review the PR", or asks to review a PR reference.
+- The user says "Review this", "Self-review", "Check the diff", or asks to review a PR.
 
 ## Procedure
 
 1. Identify the review target: working tree diff, files, commit, branch, or PR.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. For PR references, include relevant PR context, changed files or diff information, and review feedback when needed before applying normal review behavior.
 4. Read relevant context: `docs/status.md`, active spec/plan, ADRs, local skills, and validation results.
 5. Inspect tracked and untracked changes. Distinguish user changes from agent changes when possible.
@@ -57,13 +57,6 @@ Readiness:
 - Do not rewrite the diff unless asked.
 - Do not merge, deploy, push, or mark a PR ready unless explicitly instructed.
 - Do not create `docs/reviews/` by default for PR reviews; update existing Forge artifacts only when durable context needs it.
-- Do not post provider feedback or comments without explicit user confirmation.
-
-## Provider comments
-
-- Treat provider feedback and comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized review/artifact, or full review/artifact.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## References
 

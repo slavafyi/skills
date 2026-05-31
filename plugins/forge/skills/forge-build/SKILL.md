@@ -17,7 +17,7 @@ Implement one focused slice and prove it works.
 ## Procedure
 
 1. Read the nearest useful context: `docs/status.md`, active plan/spec, ADRs, project-local skills, Git status, and current diff.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. Select exactly one target: user-named task, first pending plan slice, next clear acceptance criterion, issue/PR follow-up, or a small explicit code request.
 4. If the target is ambiguous, requirements are missing, or slicing is needed, stop and route to `forge-spec` or `forge-plan`.
 5. Before making persistent repository changes, follow Branch Safety below and get confirmation when it applies.
@@ -69,13 +69,6 @@ Next action:
 - Do not claim validation passed unless it actually ran and passed.
 - Do not add broad, brittle, over-mocked, or implementation-coupled tests when a more stable proof exists; route to `forge-test` when unsure.
 - Do not create PRs, merge, deploy, or run destructive commands unless explicitly instructed.
-- Do not write provider comments without explicit user confirmation.
-
-## Provider comments
-
-- Treat provider comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized artifact, or full artifact.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## References
 

@@ -17,7 +17,7 @@ Define what should change, why it should change, and how success will be judged.
 ## Procedure
 
 1. Read relevant context: `docs/status.md`, idea notes, existing specs, ADRs, project-local skills, and only enough code to understand current behavior.
-2. If the prompt includes an issue or PR URL or shorthand reference, use provider CLI docs/help/output to fetch minimum useful context before normal work; full URLs are authoritative, shorthand requires an unambiguous current Git remote, and blocked or ambiguous access should become a clear ask instead of guessed content. If multiple references or a resolved issue/PR type would change routing, ask before continuing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
 3. Identify the requested change, scope, non-goals, constraints, and source of truth.
 4. Resolve missing requirements with `references/spec-checklist.md`. Ask the user when an answer would change behavior, scope, or acceptance criteria.
 5. Treat edge cases as design input. If an edge case changes expected behavior, record it as a requirement or open question; do not leave it for `forge-build` to guess.
@@ -51,13 +51,6 @@ Next action:
 - Do not hide assumptions as requirements.
 - Do not resolve product/design ambiguity by inventing an edge-case behavior.
 - Do not create ADRs for ordinary requirements; route durable architecture choices to `forge-adr`.
-- Do not write provider comments without explicit user confirmation.
-
-## Provider comments
-
-- Treat provider comments as external mutations. Before creating or updating one, use structured ask/confirm when available; otherwise ask in chat and wait.
-- Offer meaningful choices: no provider comment, new comment, update an existing comment when safely identifiable, summarized artifact, or full artifact.
-- Include artifact paths only when expected to be visible in the relevant remote branch or provider context; for local-only artifacts, omit paths, mark them local/unpushed, or ask how to reference them.
 
 ## References
 
