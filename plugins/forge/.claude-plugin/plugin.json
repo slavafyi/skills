@@ -1,6 +1,6 @@
 {
   "name": "forge",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Carrying project context, decisions, specs, and development workflow",
   "skills": "./skills/",
   "author": {

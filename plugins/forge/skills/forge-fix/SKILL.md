@@ -12,19 +12,20 @@ Reproduce the bug, find the root cause, and fix only after the cause is understo
 - The user reports a bug, regression, broken behavior, or failed validation.
 - A failure appears during implementation and needs root-cause diagnosis before changes.
 - A symptom needs reproduction, a feedback loop, and a minimal verified fix.
-- The user says "Fix this bug", "This broke", "Tests are failing", or "Find the root cause".
+- The user says "Fix this bug", "This broke", "Tests are failing", "Find the root cause", or asks to fix a bug from an issue/PR.
 
 ## Procedure
 
 1. Read relevant context: user report, `docs/status.md`, active spec/plan, ADRs, local skills, Git status, and current diff.
-2. Before making persistent repository changes for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
-3. Build a feedback loop with `references/diagnosis-loop.md` before editing production code.
-4. Reproduce the same symptom the user reported or the same validation failure that blocked work.
-5. Form falsifiable hypotheses and test one variable at a time until there is evidence for the root cause.
-6. Before changing production code, record the observed behavior, expected behavior, reproduction path, evidence for the suspected root cause, and smallest safe fix.
-7. If the cause is a missing requirement, unclear edge case, or design conflict, stop and route to `forge-spec` or the user instead of inventing behavior or patching the symptom.
-8. Add regression proof when there is a correct seam, using `references/regression-policy.md`. Use `forge-test` when choosing the regression layer, seam, fixture, TDD loop, contract, property test, real-dependency strategy, or CI tier is non-trivial.
-9. Make the smallest root-cause fix, remove temporary probes, re-run validation, and update status/plan when meaningful.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
+3. Before making persistent repository changes for reproduction, probes, tests, or fixes, follow Branch Safety below and get confirmation when it applies.
+4. Build a feedback loop with `references/diagnosis-loop.md` before editing production code.
+5. Reproduce the same symptom the user reported or the same validation failure that blocked work.
+6. Form falsifiable hypotheses and test one variable at a time until there is evidence for the root cause.
+7. Before changing production code, record the observed behavior, expected behavior, reproduction path, evidence for the suspected root cause, and smallest safe fix.
+8. If the issue or cause is too vague, a missing requirement, an unclear edge case, or a design conflict, stop and route to `forge-spec` or the user instead of inventing behavior or patching the symptom.
+9. Add regression proof when there is a correct seam, using `references/regression-policy.md`. Use `forge-test` when choosing the regression layer, seam, fixture, TDD loop, contract, property test, real-dependency strategy, or CI tier is non-trivial.
+10. Make the smallest root-cause fix, remove temporary probes, re-run validation, and update status/plan when meaningful.
 
 ## Branch Safety
 

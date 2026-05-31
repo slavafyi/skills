@@ -12,16 +12,17 @@ Define what should change, why it should change, and how success will be judged.
 - The user asks for a spec, requirements, scope, non-goals, or acceptance criteria.
 - A feature, refactor, workflow, or significant change is clear enough to define but not ready to plan or build.
 - Implementation would require guessing product behavior, edge cases, or design intent.
-- The user says "Write a spec", "Define requirements", "Clarify the behavior", or "What should happen when...?".
+- The user says "Write a spec", "Define requirements", "Clarify the behavior", "What should happen when...?", or asks for a spec from an issue/PR.
 
 ## Procedure
 
 1. Read relevant context: `docs/status.md`, idea notes, existing specs, ADRs, project-local skills, and only enough code to understand current behavior.
-2. Identify the requested change, scope, non-goals, constraints, and source of truth.
-3. Resolve missing requirements with `references/spec-checklist.md`. Ask the user when an answer would change behavior, scope, or acceptance criteria.
-4. Treat edge cases as design input. If an edge case changes expected behavior, record it as a requirement or open question; do not leave it for `forge-build` to guess.
-5. Create or update `docs/specs/<slug>.md` with `references/spec-template.md`; create `docs/specs/` only as part of writing the spec file.
-6. Route to `forge-plan` only when the spec is ready and implementation needs slicing.
+2. If the prompt includes an issue or PR reference, fetch it as context first; ask for a URL, setup, or pasted context when resolution or provider access is blocked.
+3. Identify the requested change, scope, non-goals, constraints, and source of truth.
+4. Resolve missing requirements with `references/spec-checklist.md`. Ask the user when an answer would change behavior, scope, or acceptance criteria.
+5. Treat edge cases as design input. If an edge case changes expected behavior, record it as a requirement or open question; do not leave it for `forge-build` to guess.
+6. Create or update `docs/specs/<slug>.md` with `references/spec-template.md`; create `docs/specs/` only as part of writing the spec file.
+7. Route to `forge-plan` only when the spec is ready and implementation needs slicing.
 
 ## Output
 

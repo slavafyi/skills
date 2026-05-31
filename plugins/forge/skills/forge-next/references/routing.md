@@ -19,6 +19,24 @@ If there are uncommitted changes:
 - route to `forge-status` when work is complete but status is stale;
 - ask before modifying when changes look accidental.
 
+## Issue or PR reference intake
+
+If the user prompt includes an issue or PR URL or shorthand reference:
+
+- fetch the referenced context before choosing the Forge skill;
+- treat a full URL as the authoritative provider and repository;
+- resolve shorthand references such as `#2`, `issue #2`, `PR #5`, or `pull request #5` only when the current Git repository and remote are unambiguous;
+- ask for a full URL or repository when shorthand resolution is ambiguous or blocked;
+- use provider CLI documentation, `--help`, and command output to determine how to fetch context, without adding provider adapters, registries, or provider-specific command tables;
+- report a concrete blocker when the needed provider CLI is missing, unauthenticated, or inaccessible, and ask for setup or pasted context instead of inventing issue or PR details;
+- fetch only the minimum useful context needed for routing, such as title, body, state, URL, relevant metadata, recent discussion, changed files, or diff information when relevant.
+
+After intake, route through the normal Forge responsibilities:
+
+- issue context usually feeds `forge-idea`, `forge-spec`, `forge-plan`, `forge-fix`, `forge-build`, `forge-status`, or `forge-review`;
+- PR context usually feeds `forge-review`, summary, continuation from feedback, implementation follow-up, or `forge-status` behavior;
+- if provider context contradicts the user's wording, briefly state the resolved type and ask when it changes the expected route.
+
 ## Vague idea
 
 If the user gives a raw idea and no clear requirements:
