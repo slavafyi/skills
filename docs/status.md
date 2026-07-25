@@ -1,41 +1,37 @@
 # Project status
 
-Updated: 2026-05-26
+Updated: 2026-07-25
 
 ## Current focus
 
-- Lazy artifact folders are implemented.
+- The initial Shopify plugin and theme-preview skill are ready for review in draft PR #3.
 
 ## Recent work
 
-- Created a ready spec for lazy artifact folder behavior.
-- Refined the spec so initialization creates no empty artifact directories, not even local-only convenience dirs.
-- Created an active implementation plan for the lazy artifact folders change.
-- Updated Forge initialization, layout, and artifact-writing docs for lazy artifact directories.
-- Removed `docs/adr/.gitkeep` and bumped Forge plugin manifests to `0.1.6`.
-- Project-centered initialization wording remains implemented.
+- Added the Shopify plugin to the Codex and Claude marketplaces.
+- Added `shopify-theme-dev-preview` for remote `preview_theme_id` verification through Chrome DevTools MCP.
+- Added workflow evals and balanced positive/negative activation queries.
+- Matched the Shopify plugin manifest structure to the existing Forge plugin convention at version `0.1.0`.
+- Opened draft PR #3 from `feature/shopify-theme-preview`.
 
 ## Next action
 
-- No active follow-up; choose the next project task from a new request.
+- Review and merge draft PR #3: https://github.com/slavafyi/skills/pull/3
 
 ## Open questions
 
-- None recorded.
+- None affecting the PR.
 
 ## Validation
 
-- Passed: no `.gitkeep` files found in the workspace.
-- Passed: targeted Forge docs search found no `.gitkeep`, old default-artifact wording, or required empty-directory wording.
-- Passed: both Forge plugin manifests are `0.1.6`.
-- Passed: `git diff --check`.
-- Passed: maintainer review found no blocking or non-blocking issues.
-- Not run: test suite because this was a documentation and metadata change.
+- Passed: skill-creator `quick_validate.py`.
+- Passed: `agentskills validate`.
+- Passed: JSON, eval structure, Shopify/Forge manifest parity, and `git diff --check`.
+- Failed: plugin-creator validation requires expanded Codex interface metadata and rejects both the Forge manifest and the matching Shopify manifest.
+- Not run: live Shopify theme and browser verification because no store-backed theme environment was available.
 
 ## Relevant artifacts
 
-- Spec: `docs/specs/lazy-artifact-folders.md`
-- Plan: `docs/plans/lazy-artifact-folders.md`
-- Related spec: `docs/specs/project-centered-init-wording.md`
-- Related plan: `docs/plans/project-centered-init-wording.md`
-- ADRs: none yet.
+- Skill: `plugins/shopify/skills/shopify-theme-dev-preview/SKILL.md`
+- Evals: `plugins/shopify/skills/shopify-theme-dev-preview/evals/`
+- PR: https://github.com/slavafyi/skills/pull/3
