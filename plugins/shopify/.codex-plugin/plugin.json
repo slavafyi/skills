@@ -1,0 +1,13 @@
+{
+  "name": "shopify",
+  "version": "0.1.0",
+  "description": "Shopify development workflow skills",
+  "skills": "./skills/",
+  "author": {
+    "name": "Slava M.",
+    "email": "hi@slava.fyi"
+  },
+  "interface": {
+    "displayName": "Shopify"
+  }
+}

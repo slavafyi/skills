@@ -9,6 +9,11 @@
       "name": "forge",
       "source": "./plugins/forge",
       "category": "development"
+    },
+    {
+      "name": "shopify",
+      "source": "./plugins/shopify",
+      "category": "development"
     }
   ]
 }

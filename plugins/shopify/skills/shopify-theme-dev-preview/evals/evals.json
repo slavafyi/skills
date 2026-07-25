@@ -1,0 +1,41 @@
+{
+  "skill_name": "shopify-theme-dev-preview",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I changed sections/product-main.liquid. The Shopify theme dev server should already be running for this repo. Check the current Chrome tab and verify the price block now has data-sale-badge=true.",
+      "expected_output": "The existing watcher and existing Chrome session are reused through Chrome DevTools MCP with auto-connect, the remote development-theme ID is verified, and the requested DOM change is checked without opening localhost.",
+      "assertions": [
+        "The agent confirms the watcher working directory before reusing it",
+        "The agent does not restart an existing watcher for the same theme",
+        "The agent uses a myshopify.com preview_theme_id URL rather than localhost",
+        "The agent uses Chrome DevTools MCP attached with --autoConnect and verifies window.Shopify.theme.id before trusting the tab",
+        "The agent checks the requested data-sale-badge DOM state and reports evidence"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Open this theme in Chrome and make sure the announcement bar renders. There's no dev server yet. shopify.theme.toml has default and staging environments; use the usual local setup and don't expose any credentials.",
+      "expected_output": "The project configuration is used without exposing credentials, the watcher is kept observable, and Chrome DevTools MCP verifies the announcement bar at the remote preview URL.",
+      "assertions": [
+        "The agent selects environments.default without asking the user to choose staging",
+        "The agent starts shopify theme dev in an observable long-running session",
+        "The agent uses the project configuration without printing credentials or secret files",
+        "The agent ignores the localhost URL and opens the remote share URL",
+        "The agent uses Chrome DevTools MCP attached to the existing Chrome session and reports evidence for the announcement bar"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Can you start theme dev here and show me the cart drawer? Port 9292 is already used by another Shopify theme under ../client-b.",
+      "expected_output": "The other theme watcher is identified by working directory and left untouched while this theme starts on a verified free local port and is checked through its remote preview URL.",
+      "assertions": [
+        "The agent resolves the process working directory instead of assuming the port belongs to this theme",
+        "The agent does not kill or restart the other theme watcher",
+        "The agent selects a verified free local port without asking to stop the other watcher",
+        "The agent does not fall back to browser verification through localhost",
+        "The agent does not claim the cart drawer was verified while the conflict is unresolved"
+      ]
+    }
+  ]
+}

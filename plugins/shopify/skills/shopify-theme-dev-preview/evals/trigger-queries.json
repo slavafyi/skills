@@ -1,0 +1,66 @@
+[
+  {
+    "query": "start shopify theme dev for this theme and open the preview in chrome",
+    "should_trigger": true
+  },
+  {
+    "query": "I updated product-card.liquid; reload the current storefront tab and check the new badge",
+    "should_trigger": true
+  },
+  {
+    "query": "is the chrome tab showing my development theme or the live one?",
+    "should_trigger": true
+  },
+  {
+    "query": "reuse the running theme watcher and verify the cart drawer in the browser",
+    "should_trigger": true
+  },
+  {
+    "query": "open the preview_theme_id URL for my local Shopify theme",
+    "should_trigger": true
+  },
+  {
+    "query": "hey can u check my theme changes in the current browser tab? dev should be running",
+    "should_trigger": true
+  },
+  {
+    "query": "shopify.theme.toml has qa and production; run the qa theme locally and inspect its header",
+    "should_trigger": true
+  },
+  {
+    "query": "the localhost theme preview is flaky again—use the store preview and confirm my CSS fix",
+    "should_trigger": true
+  },
+  {
+    "query": "push this Shopify theme to the store but don't publish it",
+    "should_trigger": false
+  },
+  {
+    "query": "publish the approved theme to production",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the Liquid syntax error in snippets/price.liquid",
+    "should_trigger": false
+  },
+  {
+    "query": "run Theme Check and fix all offenses",
+    "should_trigger": false
+  },
+  {
+    "query": "preview my Shopify app extension with shopify app dev",
+    "should_trigger": false
+  },
+  {
+    "query": "start the Hydrogen storefront development server",
+    "should_trigger": false
+  },
+  {
+    "query": "download the merchant's current live theme",
+    "should_trigger": false
+  },
+  {
+    "query": "create a shareable unpublished theme for the client",
+    "should_trigger": false
+  }
+]
