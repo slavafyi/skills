@@ -4,7 +4,7 @@ Updated: 2026-07-25
 
 ## Current focus
 
-- The initial Shopify plugin and theme-preview skill are ready for review in draft PR #3.
+- The initial Shopify plugin and theme-preview skill are merged on `main`.
 
 ## Recent work
 
@@ -12,15 +12,15 @@ Updated: 2026-07-25
 - Added `shopify-theme-dev-preview` for remote `preview_theme_id` verification through Chrome DevTools MCP.
 - Added workflow evals and balanced positive/negative activation queries.
 - Matched the Shopify plugin manifest structure to the existing Forge plugin convention at version `0.1.0`.
-- Opened draft PR #3 from `feature/shopify-theme-preview`.
+- Merged PR #3 from `feature/shopify-theme-preview`.
 
 ## Next action
 
-- Review and merge draft PR #3: https://github.com/slavafyi/skills/pull/3
+- No active follow-up; choose the next project task from a new request.
 
 ## Open questions
 
-- None affecting the PR.
+- None recorded.
 
 ## Validation
 
