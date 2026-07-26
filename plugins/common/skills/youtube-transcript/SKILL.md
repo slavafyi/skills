@@ -1,7 +1,6 @@
 ---
 name: youtube-transcript
 description: Fetches timestamped transcripts from YouTube videos. Use when a user shares a YouTube URL or video ID and needs captions for summarization, note-taking, quote extraction, or analysis.
-compatibility: Requires Node.js 22.18.0 or later, pnpm or npm, and internet access. Uses Node's native TypeScript type stripping.
 metadata:
   tags: youtube, transcript, captions, summarization, research, video
 ---

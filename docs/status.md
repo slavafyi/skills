@@ -26,9 +26,9 @@ Updated: 2026-07-26
 
 - Passed: JSON parsing for both plugin manifests and both marketplace manifests.
 - Passed: `git diff --check`.
-- Passed: byte comparison of `SKILL.md`, `tsconfig.json`, and `scripts/transcript.ts` against the source.
+- Passed: byte comparison of `tsconfig.json` and `scripts/transcript.ts` against the source.
 - Passed: `pnpm run typecheck` with the declared dependencies and pnpm 11.11.0.
-- Failed: skill-creator validation rejects the unchanged `compatibility` frontmatter key.
+- Passed: skill-creator `quick_validate.py`.
 - Failed: plugin-creator validation requires expanded Codex interface metadata not used by the existing Forge and Shopify conventions.
 - Not run: live YouTube transcript fetch.
 
