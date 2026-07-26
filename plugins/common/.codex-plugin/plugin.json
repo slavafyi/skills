@@ -1,0 +1,13 @@
+{
+  "name": "common",
+  "version": "0.1.0",
+  "description": "Common utility skills",
+  "skills": "./skills/",
+  "author": {
+    "name": "Slava M.",
+    "email": "hi@slava.fyi"
+  },
+  "interface": {
+    "displayName": "Common"
+  }
+}
