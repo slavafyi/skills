@@ -1,30 +1,20 @@
 # Retro checklist
 
-Use this checklist to extract lessons from a session.
+Keep a lesson when:
 
-## Look for
+- the user explicitly says to preserve it for future work;
+- the same mistake or correction has occurred more than once;
+- it changes repeatable project-specific agent behavior;
+- it is concrete enough to apply and verify later;
+- preserving it is cheaper than repeating the correction.
 
-- The user explicitly said "do X instead of Y".
-- The user rejected an abstraction, pattern, or implementation style.
-- The user corrected the agent's assumptions about project architecture.
-- The user clarified a recurring preference.
-- The user asked to preserve a rule for future sessions.
-- The same issue happened more than once.
-- The correction would help future agents avoid wasted work.
+Ignore:
 
-## Ignore
+- one-off naming or wording choices;
+- ordinary task requirements;
+- temporary debugging and environment state;
+- broad universal advice the model already knows;
+- rules already enforced by code, tests, linters, or configuration;
+- frustration without a concrete reusable correction.
 
-- One-off naming changes.
-- Pure task details already captured by a spec.
-- Temporary debugging steps.
-- Preferences that apply only to the current file.
-- User frustration without a concrete reusable lesson.
-- Corrections that are already covered by an existing local skill.
-
-## A good lesson is
-
-- specific;
-- reusable;
-- tied to future agent behavior;
-- scoped to this project unless explicitly universal;
-- actionable during implementation or review.
+Phrase a retained lesson as a trigger, required behavior, boundary, and check.

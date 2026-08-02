@@ -1,59 +1,34 @@
 ---
 name: forge-review
-description: Review a diff, branch, pull request, or completed slice against project intent, specs, ADRs, local skills, validation, and maintainability. Use when the user asks for review, self-review, PR review, or when uncommitted changes need inspection.
+description: Review a user-selected diff, branch, commit, or pull request for correctness, regressions, safety, test adequacy, and maintainability. Use when the user explicitly asks for review or readiness assessment. Do not trigger merely because a working tree has uncommitted changes.
 ---
 
 # forge-review
 
-Review the selected changes as a future maintainer. Do not rewrite code unless asked.
-
-## Use when
-
-- The user asks for review, self-review, PR review, or inspection of current changes.
-- A diff, branch, commit, or completed slice needs checking against project intent.
-- Readiness, validation, maintainability, or compliance with specs/ADRs/local skills is uncertain.
-- The user says "Review this", "Self-review", "Check the diff", or "Review the PR".
+Review the selected changes as a future maintainer. Do not rewrite them unless
+the user asks for review-and-fix.
 
 ## Procedure
 
-1. Identify the review target: working tree diff, files, commit, branch, or PR.
-2. Read relevant context: `docs/status.md`, active spec/plan, ADRs, local skills, and validation results.
-3. Inspect tracked and untracked changes. Distinguish user changes from agent changes when possible.
-4. Review with `references/review-checklist.md`, prioritizing correctness, requirements, data safety, failure modes, test adequacy, and maintainability.
-5. Treat symptom patches and unspecified edge-case behavior as design issues, not style nits.
-6. Report findings with `references/output-format.md`.
-7. Route follow-up: `forge-fix` for confirmed bugs, `forge-test` for missing or weak automated proof, `forge-spec` for missing requirements, `forge-plan` for sequencing issues, `forge-adr` for durable architecture choices, `forge-status` after meaningful changes.
-
-## Output
-
-```md
-Review target:
-- ...
-
-Summary:
-- ...
-
-Blocking issues:
-- ...
-
-Non-blocking issues:
-- ...
-
-Tests and validation:
-- ...
-
-Readiness:
-- Ready / Not ready / Ready after ...
-```
+1. Identify the exact review target and comparison base.
+2. Read the request, issue or acceptance criteria, repository instructions,
+   relevant ADRs, and validation evidence when available.
+3. Inspect tracked and untracked changes. Use history or surrounding code only
+   where it helps establish intent or risk.
+4. Review in the priority order in `references/review-checklist.md`.
+5. Run the smallest relevant validation when practical. Distinguish observed
+   results from claims in a PR description or prior session.
+6. Report actionable findings using `references/output-format.md`.
 
 ## Constraints
 
+- Findings come first; do not bury defects in a general summary.
+- Report only issues introduced by or directly relevant to the review target.
+- Prefer correctness, data safety, security, and missing behavior over style.
+- Include a concrete fix direction and precise location for every finding.
 - Do not approve work that was not inspected.
-- Do not claim validation was run unless it was run.
-- Do not treat claimed validation from another agent or artifact as observed validation unless command output, logs, or direct evidence are available.
-- Do not bury correctness issues under style comments.
-- Do not rewrite the diff unless asked.
-- Do not merge, deploy, push, or mark a PR ready unless explicitly instructed.
+- Do not claim checks ran unless they ran in this review.
+- Do not edit, commit, push, merge, or deploy unless explicitly requested.
 
 ## References
 

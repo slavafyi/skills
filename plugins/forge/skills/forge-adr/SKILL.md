@@ -1,55 +1,37 @@
 ---
 name: forge-adr
-description: Create or update an Architecture Decision Record for a durable technical decision. Use when the user asks to record a decision, alternatives matter, reversal is costly, or future agents may otherwise undo or misunderstand the architecture.
+description: Create or update an Architecture Decision Record when the user asks to record a durable technical decision, or when a cross-cutting choice has real alternatives, costly reversal, and rationale not obvious from code. Do not use for ordinary requirements, local style, routine configuration, or reversible implementation details.
 ---
 
 # forge-adr
 
-Record durable technical decisions. Do not use ADRs as specs, plans, notes, or TODO lists.
-
-## Use when
-
-- The user asks to record a technical or architectural decision.
-- A durable decision has meaningful alternatives, consequences, or costly reversal.
-- Future agents may otherwise misunderstand, undo, or repeatedly relitigate the decision.
-- The user says "Record this decision", "Create an ADR", "Document the tradeoff", or "Save the architecture decision".
+Record only decisions whose rationale must survive future sessions.
 
 ## Procedure
 
-1. Check whether an ADR is warranted with `references/adr-criteria.md`.
-2. Read existing ADRs, active spec/plan, `docs/status.md`, relevant code/config, and local skills.
-3. Define the decision, context, alternatives, consequences, and revisit triggers.
-4. If the issue is product behavior or an unspecified edge case, route to `forge-spec` instead of hiding it in an ADR.
-5. Create or update `docs/adr/<number>-<slug>.md` with `references/adr-template.md`; create `docs/adr/` only as part of writing the ADR file.
-6. Link related specs/plans/status when the decision affects current work.
-
-## Output
-
-```md
-ADR:
-- `docs/adr/NNNN-slug.md` / skipped
-
-Decision:
-- ...
-
-Alternatives:
-- ...
-
-Consequences:
-- ...
-
-Revisit when:
-- ...
-```
+1. If the user did not explicitly request an ADR, apply every required test in
+   `references/adr-criteria.md` before creating one.
+2. Read relevant code, configuration, tests, existing ADRs, and the user or
+   issue context that owns the decision.
+3. For implicit use, skip the ADR when the criteria fail and point to the
+   existing source of truth. Honor an explicit request, but keep a local or
+   reversible decision correspondingly short.
+4. Capture the context, chosen direction, meaningful alternatives,
+   consequences, application boundary, and revisit trigger.
+5. Create or update `docs/adr/<number>-<slug>.md` using
+   `references/adr-template.md`. Create the directory only with the first real
+   ADR.
+6. Mark the ADR `accepted` only when the user or established project process
+   has selected the decision; otherwise use `proposed`.
 
 ## Constraints
 
-- Do not create ADRs for small style preferences or reversible details.
-- Do not record secrets or environment-specific credentials.
-- Do not create empty artifact directories in advance.
-- Do not rewrite ADR history without supersession.
-- Do not use ADRs to bypass missing specs or user decisions.
-- Do not mark an unresolved decision as accepted.
+- Do not use an ADR as a requirement document, task list, handoff note, or
+  implementation log.
+- Do not duplicate a rule already made clear and enforceable by code, tests, a
+  linter, or configuration.
+- Do not record secrets, credentials, or machine-specific values.
+- Supersede accepted ADRs instead of rewriting their history.
 
 ## References
 

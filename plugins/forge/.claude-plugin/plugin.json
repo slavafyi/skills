@@ -1,7 +1,7 @@
 {
   "name": "forge",
-  "version": "0.2.1",
-  "description": "Carrying project context, decisions, specs, and development workflow",
+  "version": "0.3.0",
+  "description": "Focused root-cause debugging, review, ADR, and retrospective skills",
   "skills": "./skills/",
   "author": {
     "name": "Slava M.",
