@@ -1,56 +1,30 @@
-# Review output format
+# Review output
 
-Use this shape for review results.
-
-```md
-Review target:
-- <diff, branch, commit, PR, or files>
-
-Summary:
-- <one to three bullets>
-
-Blocking issues:
-1. [High] `<path>` — <issue>
-   - Why it matters:
-   - Suggested fix:
-
-Non-blocking issues:
-1. [Medium/Low] `<path>` — <issue>
-   - Why it matters:
-   - Suggested fix:
-
-Tests and validation:
-- Observed:
-- Missing:
-- Suggested:
-
-Readiness:
-- Ready / Not ready / Ready after <specific fixes>
-```
-
-## Severity
-
-- `High`: likely bug, data loss, security issue, broken requirement, unsafe migration, failed validation, symptom patch, or unspecified edge-case behavior.
-- `Medium`: maintainability issue, missing important test, unclear behavior, or likely future bug.
-- `Low`: readability or convention issue that does not block shipping.
-
-## No findings
-
-When no major issues are found, say so directly:
+List findings from highest to lowest severity:
 
 ```md
-No blocking issues found in the inspected diff.
+1. [High] `path/to/file.ts:42` — Short finding title
+   - Impact: ...
+   - Fix: ...
 ```
 
-Still include validation status and any non-blocking notes.
+Severity:
 
-## Self-review-and-fix mode
+- `High`: likely bug, security issue, data loss, broken requirement, unsafe
+  migration, or failed required validation.
+- `Medium`: meaningful missing case, weak proof, reliability problem, or likely
+  future defect.
+- `Low`: non-blocking maintainability issue with a concrete cost.
 
-When the user asks to review and fix:
+After findings, briefly state validation performed and overall readiness. If no
+material issue was found, say so directly:
 
-1. Run the review.
-2. Fix only clear issues inside the requested scope.
-3. Re-run relevant validation.
-4. Report what was found and fixed.
+```md
+No material findings in the inspected changes.
 
-Do not silently make broad taste-based rewrites.
+Validation:
+- Passed: `...`
+- Not run: `...` because ...
+```
+
+Do not add empty severity sections or a long restatement of the diff.

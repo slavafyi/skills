@@ -1,28 +1,19 @@
-# Regression policy
+# Regression proof
 
-Regression proof should show that the specific bug would fail before the fix and pass after it.
+Regression proof should fail for the reported behavior before the fix and pass
+after it.
 
-## Prefer
+Prefer:
 
-- focused unit/integration test at the nearest stable seam;
-- API or CLI test through the public contract;
-- UI test only when the bug is genuinely UI behavior;
-- fixture replay for parser, importer, webhook, or sync bugs;
-- stress loop for flaky concurrency/timing bugs.
+- a focused test through a stable public seam;
+- API or CLI behavior for contract failures;
+- fixture replay for parsers, imports, webhooks, or sync;
+- a stress loop for timing or concurrency defects;
+- a UI test only when the defect is genuinely UI behavior.
 
-## Avoid
+Avoid tests that mirror the implementation, broad snapshots, or checks that
+would pass while the original bug remains.
 
-- tests that assert implementation details unrelated to the bug;
-- snapshots that hide the important behavior;
-- broad tests that pass even when the bug remains;
-- changing production code only to make testing easier unless the seam is a real design improvement.
-
-## When no good regression test exists
-
-Record:
-
-- why a test was not practical;
-- what manual or runtime check was used;
-- what design/testing seam would make future proof better.
-
-If the missing seam reveals a durable architecture issue, consider `forge-adr` after the fix is understood.
+Do not introduce a new framework, dependency, adapter, or abstraction solely to
+obtain one regression test. If no stable seam exists, record the runtime or
+manual proof used and the remaining gap.

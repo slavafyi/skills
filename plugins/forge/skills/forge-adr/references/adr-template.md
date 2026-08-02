@@ -1,7 +1,5 @@
 # ADR template
 
-Use this template for `docs/adr/<number>-<slug>.md`.
-
 ```md
 # ADR-NNNN: <title>
 
@@ -10,37 +8,22 @@ Status: proposed | accepted | superseded | deprecated
 
 ## Context
 
-<What problem or pressure caused this decision?>
+<The pressure, constraints, and why the decision is not obvious.>
 
 ## Decision
 
-<The chosen direction. Be concrete.>
+<The selected direction and its boundary.>
 
 ## Alternatives considered
 
-### <Alternative A>
-
-- Pros:
-- Cons:
-
-### <Alternative B>
-
-- Pros:
-- Cons:
+- `<alternative>` — why it was not selected.
+- `<alternative>` — why it was not selected.
 
 ## Consequences
 
-### Positive
-
-- ...
-
-### Negative
-
-- ...
-
-### Neutral / operational
-
-- ...
+- Positive: ...
+- Negative: ...
+- Operational: ...
 
 ## How to apply this
 
@@ -52,21 +35,9 @@ Status: proposed | accepted | superseded | deprecated
 
 ## Links
 
-- Spec: `docs/specs/...`
-- Plan: `docs/plans/...`
-- Status: `docs/status.md`
+- Issue, code, prior ADR, or other relevant source: ...
 ```
 
-## Numbering
-
-Use the next numeric prefix found in `docs/adr/`. If `docs/adr/` does not exist because there are no ADRs yet, use `0001` and create the directory only when writing the ADR file.
-
-Examples:
-
-```text
-0001-use-postgres.md
-0002-keep-server-state-in-query-cache.md
-0003-supersede-auth-token-storage.md
-```
-
-If existing ADRs are unnumbered, preserve the local convention unless the user asks to normalize it.
+Use the next numeric prefix in `docs/adr/`. Start with `0001` when no ADR
+exists. Preserve an established local naming convention instead of normalizing
+it without request.

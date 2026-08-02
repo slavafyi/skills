@@ -1,81 +1,47 @@
 # Local skill authoring
 
-Project-local skills should follow the [Agent Skills](https://agentskills.io) shape and stay focused.
+Create a local skill only when a recurring task needs project-specific guidance
+that the model would not reliably infer from code or repository instructions.
 
-## Supported structure
+Use the Agent Skills shape:
 
 ```text
 <skill-name>/
   SKILL.md
-  references/
-  scripts/
-  assets/
+  references/  # optional
+  scripts/     # optional
 ```
 
-Only `SKILL.md` is required.
-
-## Required frontmatter
+Minimal `SKILL.md`:
 
 ```md
 ---
 name: project-example
-description: Use this skill when ...
+description: Use when <specific trigger>. Applies <project-specific behavior>.
 ---
+
+# project-example
+
+## Rule
+
+<Concrete behavior and why it matters.>
+
+## Procedure
+
+1. ...
+2. ...
+
+## Check
+
+- ...
 ```
 
 Rules:
 
-- `name` must match the directory name exactly.
-- Use lowercase kebab-case.
-- `description` must say what the skill does and when to use it.
-- Avoid vague descriptions like "project rules" or "coding style".
-
-## Good local skill names
-
-Use scoped names:
-
-```text
-project-code-organization
-project-testing-style
-project-api-patterns
-project-ui-patterns
-project-review-checks
-```
-
-Avoid overly broad names:
-
-```text
-project-rules
-project-memory
-misc
-style
-```
-
-## Content guidelines
-
-A good local skill includes:
-
-- the specific trigger;
-- the rule or pattern;
-- when to apply it;
-- when not to apply it;
-- examples or anti-examples;
-- validation checks.
-
-Keep the main `SKILL.md` compact. Put longer examples in `references/`.
-
-## Create or update?
-
-Update an existing skill when the new lesson belongs to the same scope.
-
-Create a new skill only when the lesson is meaningfully different from existing local skills.
-
-## What not to include
-
-Do not include:
-
-- one-off task details;
-- secrets;
-- user emotions or private conversation details;
-- broad universal coding advice;
-- rules already enforced by formatter, linter, or tests unless agents keep violating them.
+- Match `name` to the directory and use lowercase kebab-case.
+- Put the trigger and important gotcha in `SKILL.md`.
+- Add references only when the task needs optional detail.
+- Include project paths, examples, and validation that change agent behavior.
+- Omit generic engineering advice, duplicated docs, secrets, and one-off task
+  history.
+- Update an existing coherent skill instead of creating an adjacent one.

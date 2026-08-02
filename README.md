@@ -6,8 +6,8 @@ Plugin-specific documentation lives under `plugins/<plugin>/README.md`.
 
 ## Plugins
 
-- [forge](./plugins/forge/) — workflow and project-memory skills for development
-  agents.
+- [forge](./plugins/forge/) — focused debugging, review, ADR, and retrospective
+  skills for development agents.
 - [shopify](./plugins/shopify/) — Shopify development workflow skills.
 - [common](./plugins/common/) — common utility skills for coding agents.
 

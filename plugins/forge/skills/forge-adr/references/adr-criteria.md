@@ -1,43 +1,32 @@
 # ADR criteria
 
-Create an ADR only when the decision is important enough to survive future sessions.
+Without an explicit user request, create an ADR only when all of these are
+true:
 
-## Create an ADR when most are true
+1. The decision affects architecture, data, a public API, security, deployment,
+   operations, or another cross-cutting project boundary.
+2. At least two realistic alternatives have materially different trade-offs.
+3. Reversal would require significant migration, coordination, compatibility
+   work, or discarded implementation effort.
+4. The rationale is not obvious or reliably enforced by the resulting code,
+   tests, configuration, or tooling.
 
-- The decision is hard or costly to reverse.
-- The decision affects architecture, data, API, security, deployment, operations, or long-term developer experience.
-- There were meaningful alternatives.
-- The tradeoff is not obvious from the final code.
-- Future agents or maintainers may otherwise undo it.
-- The decision changes how future specs, plans, or builds should be done.
+Honor a direct user request to create an ADR. If the choice is local or easily
+reversible, keep the record concise and say so rather than inflating its
+architectural importance.
 
-## Usually do not create an ADR for
+Do not create an ADR for:
 
-- local style preferences;
-- naming choices;
-- routine library usage;
-- obvious implementation details;
-- temporary workarounds;
-- choices already enforced by code, tests, config, or local skills;
-- decisions that belong in a spec because they describe product behavior;
-- edge-case behavior that the user/spec has not decided yet.
+- product behavior or acceptance criteria;
+- naming and style preferences;
+- routine dependency or framework usage;
+- lint rules already explained by configuration;
+- one-off implementation details or temporary workarounds;
+- decisions that are still unresolved.
 
-## Status meanings
+Use these statuses:
 
-- `proposed`: written but not accepted yet;
-- `accepted`: the project should follow it;
+- `proposed`: documented but not selected;
+- `accepted`: selected and currently applicable;
 - `superseded`: replaced by a newer ADR;
-- `deprecated`: no longer recommended but not fully replaced.
-
-## Revisit triggers
-
-Every ADR should say when to reconsider it.
-
-Examples:
-
-- scale changes by an order of magnitude;
-- a dependency becomes unmaintained;
-- a new platform constraint appears;
-- implementation cost exceeds expectation;
-- a better test seam or simpler architecture becomes available;
-- the product requirement that justified the decision disappears.
+- `deprecated`: no longer recommended without a direct replacement.
