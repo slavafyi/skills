@@ -65,7 +65,7 @@ claude plugin install forge@slavafyi
 ### OpenCode, Pi, and other agents
 
 ```bash
-pnpm dlx skills add slavafyi/skills --skill forge-fix --skill forge-review \
+npx skills add slavafyi/skills --skill forge-fix --skill forge-review \
   --skill forge-adr --skill forge-retro
 ```
 
