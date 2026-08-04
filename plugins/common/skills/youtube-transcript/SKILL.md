@@ -62,5 +62,7 @@ The script prints timestamped transcript lines:
 ## Notes
 
 - Requires captions/transcripts to be available for the video
-- Works with both auto-generated and manual transcripts
+- Prefers the video's manually provided default language and falls back to the
+  first available caption track when only auto-generated captions exist
+- Retries transient YouTube failures up to three times
 - Prints an error and exits non-zero when the transcript cannot be fetched

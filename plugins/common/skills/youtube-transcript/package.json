@@ -11,7 +11,7 @@
   },
   "packageManager": "pnpm@11.11.0",
   "dependencies": {
-    "youtube-transcript-plus": "^2.0.0"
+    "youtube-transcript-plus": "^2.0.1"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
