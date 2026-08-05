@@ -6,13 +6,11 @@ matter instead of filling them with guesses.
 ## Source
 
 - What exactly did the user ask for?
-- Is there an issue, PR, document, discussion, or acceptance-test source?
-- Are linked sources accessible and current?
+- Is relevant context already present in repository documentation or tests?
 - Does repository state contradict the task description?
 
-Use available provider tooling for external references. Resolve shorthand such
-as `#42` from repository context only when unambiguous. Never invent blocked
-content or modify the external source.
+If the source is an external tracker identifier or URL, use `forge-ticket`
+instead.
 
 ## Behavior
 
@@ -52,8 +50,7 @@ Choose one result:
 
 ## Example
 
-For "Read issue #42 and tell me whether it is ready to implement," read the
-issue and relevant discussion, inspect the named code and tests, and compare the
-request with current behavior. If duplicate identifiers could reasonably be
-rejected or merged and the issue does not choose, report that single decision
-as blocking. Do not choose a behavior or start coding.
+For "Clarify the requested CSV export change before coding," inspect the task
+text, current export behavior, and focused tests. If duplicate rows could
+reasonably be preserved or collapsed and the request does not choose, report
+that single decision as blocking. Do not choose a behavior or start coding.

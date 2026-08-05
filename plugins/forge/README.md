@@ -10,14 +10,15 @@ task state, or session handoff.
 
 | Skill | Use it for |
 | --- | --- |
-| `forge-task` | Read, clarify, and assess the readiness of a coding task. |
+| `forge-task` | Clarify a task already described in the conversation or repository. |
+| `forge-ticket` | Research an external ticket and its complete accessible context. |
 
-Use `forge-task` when a task, issue, or PR follow-up needs investigation before
-coding. Skip it when the requested change is already explicit and ready to
-implement.
+Use `forge-task` for local task shaping. Use `forge-ticket` for identifiers or
+URLs from Jira, Linear, Asana, ClickUp, GitHub, GitLab, and similar work-item
+systems.
 
-The skill reports its findings in the conversation by default. It does not
-create task, spec, or plan documents unless the user asks for one.
+Both skills report findings in the conversation by default. They do not create
+task, research, spec, or plan documents unless the user asks for one.
 
 ## Install
 
@@ -38,7 +39,7 @@ claude plugin install forge@slavafyi
 ### OpenCode, Pi, and other agents
 
 ```bash
-npx skills add slavafyi/skills --skill forge-task
+npx skills add slavafyi/skills --skill forge-task --skill forge-ticket
 ```
 
 ## Migration from v0.3

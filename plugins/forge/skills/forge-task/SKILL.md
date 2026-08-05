@@ -1,17 +1,16 @@
 ---
 name: forge-task
-description: Read and shape a new coding task before implementation. Use when the user asks to inspect, understand, clarify, scope, or prepare a task, issue, or PR follow-up, especially when expected behavior, acceptance criteria, relevant code, or readiness is unclear. Do not use for direct implementation of an already clear task, bug diagnosis, code review, implementation planning, or session handoff.
+description: Read and shape a coding task that is already described in the conversation or repository. Use when the user asks to clarify scope, expected behavior, acceptance criteria, relevant code, or implementation readiness without pointing to an external work item. Do not use for Jira, Linear, Asana, ClickUp, GitHub, GitLab, or other external ticket identifiers or URLs; use forge-ticket instead. Do not use for direct implementation, bug diagnosis, code review, implementation planning, or session handoff.
 ---
 
 # forge-task
 
-Understand the task well enough to decide what should happen next. Do not
-implement it.
+Understand a locally described task well enough to decide what should happen
+next. Do not implement it.
 
 ## Procedure
 
-1. Read the complete task source and any directly relevant linked context. If
-   access is blocked, ask for access or pasted content instead of inventing it.
+1. Read the complete task text and directly relevant repository context.
 2. Read repository instructions, Git state, relevant documentation, and only
    the code, tests, and history needed to understand current behavior.
 3. Build the task brief using `references/task-checklist.md`.
@@ -32,10 +31,10 @@ implement it.
 
 ## Constraints
 
+- Route external ticket identifiers and URLs to `forge-ticket`.
 - Do not edit code or create task, spec, or plan documents unless requested.
 - Do not turn implementation guesses into requirements.
 - Do not scan the whole repository when targeted inspection is enough.
-- Do not write to an issue tracker, review system, or other external provider.
 - Do not add process around a task that is already explicit and ready to do.
 
 ## References

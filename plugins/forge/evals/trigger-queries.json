@@ -1,23 +1,47 @@
 [
   {
-    "query": "Read issue #42, inspect the relevant code, and tell me whether the task is ready to implement. Do not change anything yet.",
+    "query": "Before we code the CSV export request described above, work out the current behavior, scope, acceptance criteria, and questions that actually block implementation.",
     "expected_skill": "forge-task"
   },
   {
-    "query": "Before we code this request, work out the current behavior, scope, acceptance criteria, and any questions that actually block implementation.",
+    "query": "Read the task described in docs/export-request.md, inspect the relevant code, and tell me whether it is ready to implement.",
     "expected_skill": "forge-task"
   },
   {
-    "query": "Understand this PR follow-up task and identify which parts of the repository it affects. I only want task analysis for now.",
+    "query": "Clarify this locally described feature request and tell me whether any product decision is missing before implementation.",
     "expected_skill": "forge-task"
   },
   {
-    "query": "There are several old plans and unrelated local changes here. Read the new task, verify it against the current code, and say what context is actually relevant.",
+    "query": "There are several old plans and unrelated local changes here. Verify my requested parser change against the current code and identify only the relevant context.",
     "expected_skill": "forge-task"
   },
   {
-    "query": "Clarify this feature request and tell me whether any product decision is missing before implementation.",
-    "expected_skill": "forge-task"
+    "query": "Take ENG-123 into work. Research the ticket and come back with the full context and a recommendation before changing code.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Read https://company.atlassian.net/browse/PLAT-91, including every attachment, link, comment, and reply, then investigate related work.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Investigate Linear issue LIN-482 and find the related docs, Slack discussions, prior tickets, and public library bugs.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Take this Asana task into research: https://app.asana.com/0/1200/9876. Do not implement it yet.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Prepare ClickUp task 86b4m2 for implementation and report any context you cannot access.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Research https://github.com/example/project/issues/42 and its linked pull requests, previous issues, documentation, and community discussions before we decide what to build.",
+    "expected_skill": "forge-ticket"
+  },
+  {
+    "query": "Study GitLab issue backend/api#317 and all linked merge requests and threads, then recommend an approach.",
+    "expected_skill": "forge-ticket"
   },
   {
     "query": "Change the default editor from vim to nvim and run the existing check.",
