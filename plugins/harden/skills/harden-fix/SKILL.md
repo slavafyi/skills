@@ -1,9 +1,9 @@
 ---
-name: forge-fix
+name: harden-fix
 description: Diagnose and fix the root cause of a reported bug, regression, or failing validation. Use when broken behavior needs reproduction and evidence before editing. Do not use for routine implementation, typo fixes, planning, test-only requests, or code review.
 ---
 
-# forge-fix
+# harden-fix
 
 Reproduce the failure, identify its root cause, and make the smallest verified
 fix.

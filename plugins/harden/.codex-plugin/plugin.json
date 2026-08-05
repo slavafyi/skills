@@ -1,0 +1,13 @@
+{
+  "name": "harden",
+  "version": "0.1.0",
+  "description": "Focused root-cause debugging, review, ADR, and retrospective skills",
+  "skills": "./skills/",
+  "author": {
+    "name": "Slava M.",
+    "email": "hi@slava.fyi"
+  },
+  "interface": {
+    "displayName": "Harden"
+  }
+}

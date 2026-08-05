@@ -1,9 +1,9 @@
 ---
-name: forge-adr
+name: harden-adr
 description: Create or update an Architecture Decision Record when the user asks to record a durable technical decision, or when a cross-cutting choice has real alternatives, costly reversal, and rationale not obvious from code. Do not use for ordinary requirements, local style, routine configuration, or reversible implementation details.
 ---
 
-# forge-adr
+# harden-adr
 
 Record only decisions whose rationale must survive future sessions.
 

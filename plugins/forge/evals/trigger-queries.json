@@ -1,66 +1,50 @@
 [
   {
-    "query": "Change the default editor in my dotfiles from vim to nvim and run the existing check.",
+    "query": "Read issue #42, inspect the relevant code, and tell me whether the task is ready to implement. Do not change anything yet.",
+    "expected_skill": "forge-task"
+  },
+  {
+    "query": "Before we code this request, work out the current behavior, scope, acceptance criteria, and any questions that actually block implementation.",
+    "expected_skill": "forge-task"
+  },
+  {
+    "query": "Understand this PR follow-up task and identify which parts of the repository it affects. I only want task analysis for now.",
+    "expected_skill": "forge-task"
+  },
+  {
+    "query": "There are several old plans and unrelated local changes here. Read the new task, verify it against the current code, and say what context is actually relevant.",
+    "expected_skill": "forge-task"
+  },
+  {
+    "query": "Clarify this feature request and tell me whether any product decision is missing before implementation.",
+    "expected_skill": "forge-task"
+  },
+  {
+    "query": "Change the default editor from vim to nvim and run the existing check.",
     "expected_skill": null
   },
   {
-    "query": "Add one more Russian label to the existing WHOOP activity map.",
+    "query": "The importer drops reply links. Reproduce the failure, find the root cause, and fix it.",
     "expected_skill": null
   },
   {
-    "query": "Write unit tests for the parser's documented empty-input behavior.",
+    "query": "Review the current diff for correctness and merge readiness.",
     "expected_skill": null
   },
   {
-    "query": "Make an implementation plan for this feature before touching code.",
+    "query": "Create an ADR for the decision to use row-level security.",
     "expected_skill": null
   },
   {
-    "query": "Summarize this session so I can continue in a fresh thread.",
+    "query": "Make a detailed implementation plan for the already approved specification.",
     "expected_skill": null
   },
   {
-    "query": "Fix the typo in README.md and nothing else.",
+    "query": "Summarize this session so I can continue tomorrow.",
     "expected_skill": null
   },
   {
-    "query": "The import command now drops reply links after the latest change. Reproduce it and fix the real cause.",
-    "expected_skill": "forge-fix"
-  },
-  {
-    "query": "CI fails only on Node 24 with an unhandled AbortError. Find the root cause and fix the regression.",
-    "expected_skill": "forge-fix"
-  },
-  {
-    "query": "Review the current diff for correctness and tell me whether it is ready to merge.",
-    "expected_skill": "forge-review"
-  },
-  {
-    "query": "Review commit 8f20c1a. Focus on data loss and missing regression coverage.",
-    "expected_skill": "forge-review"
-  },
-  {
-    "query": "Create an ADR recording why all services will use PostgreSQL row-level security instead of application-only authorization.",
-    "expected_skill": "forge-adr"
-  },
-  {
-    "query": "We chose an append-only event schema and reversing it would require migrating every consumer. Record the decision and trade-offs.",
-    "expected_skill": "forge-adr"
-  },
-  {
-    "query": "I have corrected this twice: in this repository never add a service layer for feature-local CRUD. Preserve that for future agents.",
-    "expected_skill": "forge-retro"
-  },
-  {
-    "query": "Run a retrospective and keep only the recurring lesson from my feedback about migration tests.",
-    "expected_skill": "forge-retro"
-  },
-  {
-    "query": "Should we use SQLite or PostgreSQL for this disposable prototype? Give me the trade-offs, but do not create documents yet.",
-    "expected_skill": null
-  },
-  {
-    "query": "Update the lint config to allow optional chaining; the desired change is already explicit.",
+    "query": "I have a vague idea for a social app. Brainstorm possible audiences with me.",
     "expected_skill": null
   }
 ]

@@ -1,7 +1,7 @@
 {
   "name": "forge",
-  "version": "0.3.0",
-  "description": "Focused root-cause debugging, review, ADR, and retrospective skills",
+  "version": "0.4.0",
+  "description": "Task understanding and readiness skills for coding agents",
   "skills": "./skills/",
   "author": {
     "name": "Slava M.",
