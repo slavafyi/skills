@@ -1,9 +1,9 @@
 ---
-name: forge-review
+name: harden-review
 description: Review a user-selected diff, branch, commit, or pull request for correctness, regressions, safety, test adequacy, and maintainability. Use when the user explicitly asks for review or readiness assessment. Do not trigger merely because a working tree has uncommitted changes.
 ---
 
-# forge-review
+# harden-review
 
 Review the selected changes as a future maintainer. Do not rewrite them unless
 the user asks for review-and-fix.

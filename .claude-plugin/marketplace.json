@@ -11,6 +11,11 @@
       "category": "development"
     },
     {
+      "name": "harden",
+      "source": "./plugins/harden",
+      "category": "development"
+    },
+    {
       "name": "shopify",
       "source": "./plugins/shopify",
       "category": "development"

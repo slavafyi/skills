@@ -1,9 +1,9 @@
 ---
-name: forge-retro
+name: harden-retro
 description: Preserve a recurring project-specific lesson after explicit user feedback or repeated agent mistakes. Use when the user asks to remember a correction, update future agent behavior, or run a retrospective. Do not trigger automatically after ordinary work or persist one-off task details.
 ---
 
-# forge-retro
+# harden-retro
 
 Keep only lessons likely to prevent the same mistake in future work.
 
@@ -30,7 +30,7 @@ Keep only lessons likely to prevent the same mistake in future work.
 - Do not preserve secrets, private conversation details, or user frustration.
 - Do not create a new skill for a single weak signal unless the user explicitly
   identifies it as a durable recurring rule.
-- Do not modify installed Forge skills from an ordinary project.
+- Do not modify installed Harden skills from an ordinary project.
 
 ## References
 
