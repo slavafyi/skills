@@ -1,0 +1,74 @@
+{
+  "skill_name": "ronin",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Implement the requested parser fix under Rōnin. The repository has a GitHub remote, the identity is configured, and there is no task branch or pull request yet.",
+      "expected_output": "The agent verifies the Rōnin identity before editing, then infers the normal branch, signed commit, push, and pull-request delivery workflow without using the user's personal identity.",
+      "assertions": [
+        "The agent completes the Rōnin preflight before editing files",
+        "The agent creates a task branch because no suitable branch exists",
+        "The agent uses command-scoped Rōnin author and SSH-signing settings without changing Git config",
+        "The agent pushes with only the Rōnin SSH key and creates the pull request as ronind",
+        "The agent verifies the remote commit author is ronind and the GitHub signature is verified"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make these changes as the bot, but only edit and validate the files. Do not commit, push, or open a PR.",
+      "expected_output": "The agent verifies that Rōnin is configured, edits and validates the files, and honors the explicit prohibition on commit, push, and pull-request operations.",
+      "assertions": [
+        "The agent runs the identity preflight before editing",
+        "The agent edits and validates the requested files when the preflight succeeds",
+        "The agent does not commit, push, or create a pull request",
+        "The agent does not broaden the explicit delivery boundary"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Fix this under ronind. This computer has no ronind account in gh auth.",
+      "expected_output": "The agent stops before editing, reports that the ronind GitHub login is missing, and offers a separate setup operation without requesting credentials or falling back to the user's account.",
+      "assertions": [
+        "The agent detects the missing gh identity before editing",
+        "The agent performs no file, commit, push, or pull-request changes",
+        "The agent names the missing ronind login",
+        "The agent offers setup but does not start login or request a token or password",
+        "The agent does not use another configured GitHub account"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Complete the task as Ronin. The ronind account exists in gh, but ~/.ssh/id_ed25519_ronin is missing.",
+      "expected_output": "The agent stops before editing, reports the missing SSH key, and offers to configure the Rōnin identity as a separate operation.",
+      "assertions": [
+        "The agent checks both gh auth and the SSH key",
+        "The agent performs no file edits or Git operations",
+        "The agent does not substitute another SSH key",
+        "The agent offers setup only with explicit user approval"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Continue this work as Ronin. A matching remote branch and open pull request already exist.",
+      "expected_output": "The agent verifies Rōnin, reuses the existing branch and pull request, signs and pushes only the new intended commits, and avoids duplicate delivery objects.",
+      "assertions": [
+        "The agent completes the identity preflight first",
+        "The agent reuses the matching branch",
+        "The agent updates the existing pull request instead of creating another one",
+        "The agent verifies the new remote commits are authored by ronind and have verified signatures"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Deliver this change as ronind. The configured identity cannot push directly to the public upstream repository, and no fork exists yet.",
+      "expected_output": "The agent verifies the identity and repository permissions, creates and verifies a ronind fork before editing, pushes there with the Rōnin key, and opens a pull request against upstream.",
+      "assertions": [
+        "The agent checks repository push permission during preflight",
+        "The agent creates the fork before editing because direct push is unavailable",
+        "The agent keeps the upstream remote and uses a separate fork remote",
+        "The agent pushes with the Rōnin SSH key and uses a ronind branch as the pull-request head",
+        "The agent verifies authorship and signature in the fork repository"
+      ]
+    }
+  ]
+}
