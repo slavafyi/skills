@@ -1,0 +1,62 @@
+[
+  {
+    "query": "Make these changes under the agent identity, not under my name.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fix this and deliver everything as the bot.",
+    "should_trigger": true
+  },
+  {
+    "query": "Commit this task as the assistant, not through my account.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do this under Rōnin.",
+    "should_trigger": true
+  },
+  {
+    "query": "Let Ron deliver the changes like last time.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use Rona for this repository change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use ronin for this change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Commit and open the PR as ronind, not as me.",
+    "should_trigger": true
+  },
+  {
+    "query": "Implement the fix as the assistant, but do not commit it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Do not use ronind for this commit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Change the default editor from vim to nvim and run the checks.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add a bot user to the application's database schema.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain how Git commit authorship works.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare the Ronin blockchain with Ethereum.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rename the local variable ronin to serviceName.",
+    "should_trigger": false
+  }
+]
