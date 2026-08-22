@@ -5,10 +5,10 @@ description: >
   theme preview with `shopify theme dev`, including checking the current Chrome tab
   after theme file changes. It reuses the watcher for the current theme, starts one
   only when needed, resolves Shopify CLI store or environment configuration, and
-  verifies the remote `preview_theme_id` storefront through Chrome DevTools MCP
-  attached to the existing Chrome session. Do not use for theme push, publish,
-  production deploys, app or Hydrogen previews, or Liquid edits that do not require a
-  running browser preview.
+  verifies the remote `preview_theme_id` storefront with available browser automation
+  attached to the user's existing Chrome session and profile. Do not use for theme
+  push, publish, production deploys, app or Hydrogen previews, or Liquid edits that do
+  not require a running browser preview.
 ---
 
 # Shopify theme development preview
@@ -25,9 +25,14 @@ Serve the current Shopify theme and verify the rendered storefront in Chrome.
 4. Never print credentials or read an entire secret file into output. Refer to
    environment variables and TOML environment names, not secret values.
 5. Never run `theme push`, `theme publish`, or add `--allow-live` in this workflow.
-6. Use Chrome DevTools MCP connected to the user's existing Chrome with
-   `--autoConnect`. Do not use a generic browser tool or launch a separate browser
-   profile.
+6. Use the user's already-running Chrome, current profile, windows, tabs, and browser
+   session. Never launch another browser, window, isolated context, or temporary
+   profile unless the user explicitly asks for one.
+7. Prefer browser CLIs over MCP. Among available CLIs, prefer Playwright; otherwise use
+   another suitable CLI. MCP is a discouraged fallback: when no browser CLI is
+   available but one or more MCP tools are, ask the user what to use before connecting.
+   If no suitable tool is available, report the blocker. Never connect competing
+   browser automation tools simultaneously.
 
 ## Workflow
 
@@ -99,21 +104,31 @@ selection. Use the development theme's store domain and ID to construct the URL.
 the result is missing or ambiguous, do not guess; report what is known and ask for the
 store or environment.
 
-### 4. Reuse or open the Chrome tab
+### 4. Select browser automation and reuse a Chrome tab
 
-Use Chrome DevTools MCP with `--autoConnect`; do not substitute another browser tool
-or launch a separate Chrome profile.
+Inspect the available browser automation tools before connecting. Use Playwright when
+its CLI is available; otherwise use another suitable browser CLI. Do not choose MCP
+while a suitable CLI is available. If only MCP browser tools are available, ask the
+user what to use and wait for an answer. Do not include tool-specific operating
+instructions in this workflow; use the selected tool's own documentation or skill.
 
-Reuse a tab on the expected `<store>.myshopify.com` domain only after verifying:
+Reuse an existing automation session only when it uses the selected tool and is
+attached to the user's current Chrome profile. Otherwise attach the selected tool to
+the already-running Chrome without creating a browser, profile, or isolated context.
+
+List tabs across the existing Chrome windows. Reuse a tab on the expected
+`<store>.myshopify.com` domain only after verifying:
 
 ```js
 window.Shopify?.theme ?? null
 ```
 
-If its theme ID does not match, navigate it to the full remote preview URL. Open a new
-tab only when no store tab exists. After navigation, verify `window.Shopify.theme.id`
-again. The `preview_theme_id` query parameter can disappear after Shopify records the
-preview selection, so identity—not the current query string—is the final check.
+If its theme ID does not match, navigate it to the full remote preview URL. If no store
+tab exists, reuse a blank tab in the current browser session. Open a new tab in that
+session only when no suitable existing tab exists. Never open a new window or browser
+instance. After navigation, verify `window.Shopify.theme.id` again. The
+`preview_theme_id` query parameter can disappear after Shopify records the preview
+selection, so identity—not the current query string—is the final check.
 
 If the storefront shows a password or login page, preserve the tab and ask the user to
 complete access rather than requesting or exposing a password in output.

@@ -4,25 +4,27 @@
     {
       "id": 1,
       "prompt": "I changed sections/product-main.liquid. The Shopify theme dev server should already be running for this repo. Check the current Chrome tab and verify the price block now has data-sale-badge=true.",
-      "expected_output": "The existing watcher and existing Chrome session are reused through Chrome DevTools MCP with auto-connect, the remote development-theme ID is verified, and the requested DOM change is checked without opening localhost.",
+      "expected_output": "The existing watcher, Chrome profile, browser session, and matching tab are reused through Playwright CLI when it is available; the remote development-theme ID is verified; and the requested DOM change is checked without opening localhost or another browser instance.",
       "assertions": [
         "The agent confirms the watcher working directory before reusing it",
         "The agent does not restart an existing watcher for the same theme",
         "The agent uses a myshopify.com preview_theme_id URL rather than localhost",
-        "The agent uses Chrome DevTools MCP attached with --autoConnect and verifies window.Shopify.theme.id before trusting the tab",
+        "The agent prefers Playwright CLI when available and verifies window.Shopify.theme.id before trusting the tab",
+        "The agent reuses the existing Chrome profile, browser session, and matching tab rather than launching an isolated browser",
         "The agent checks the requested data-sale-badge DOM state and reports evidence"
       ]
     },
     {
       "id": 2,
       "prompt": "Open this theme in Chrome and make sure the announcement bar renders. There's no dev server yet. shopify.theme.toml has default and staging environments; use the usual local setup and don't expose any credentials.",
-      "expected_output": "The project configuration is used without exposing credentials, the watcher is kept observable, and Chrome DevTools MCP verifies the announcement bar at the remote preview URL.",
+      "expected_output": "The project configuration is used without exposing credentials, the watcher is kept observable, and an available browser CLI attached to the existing Chrome profile verifies the announcement bar at the remote preview URL.",
       "assertions": [
         "The agent selects environments.default without asking the user to choose staging",
         "The agent starts shopify theme dev in an observable long-running session",
         "The agent uses the project configuration without printing credentials or secret files",
         "The agent ignores the localhost URL and opens the remote share URL",
-        "The agent uses Chrome DevTools MCP attached to the existing Chrome session and reports evidence for the announcement bar"
+        "The agent uses the preferred available browser CLI with the existing Chrome profile and reports evidence for the announcement bar",
+        "The agent reuses a suitable existing tab before opening a new tab and does not open a new window or isolated browser context"
       ]
     },
     {
@@ -35,6 +37,40 @@
         "The agent selects a verified free local port without asking to stop the other watcher",
         "The agent does not fall back to browser verification through localhost",
         "The agent does not claim the cart drawer was verified while the conflict is unresolved"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Verify this theme preview in my current Chrome. Playwright CLI, Chrome DevTools CLI, and Chrome DevTools MCP are all available.",
+      "expected_output": "Playwright CLI is selected and attached to the existing Chrome profile; the available alternatives are not connected; and the existing preview tab is reused.",
+      "assertions": [
+        "The agent selects Playwright CLI ahead of every other available browser tool",
+        "The agent does not connect Chrome DevTools CLI or MCP at the same time",
+        "The agent uses the already-running Chrome and current profile",
+        "The agent reuses the existing preview tab instead of opening another browser, window, or isolated context"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Check the current Shopify preview tab. Playwright is unavailable, but a browser CLI and a browser MCP are available.",
+      "expected_output": "The available browser CLI is selected instead of MCP and is attached to the existing Chrome profile without launching an isolated browser.",
+      "assertions": [
+        "The agent selects the available browser CLI because Playwright CLI is unavailable",
+        "The agent does not select or connect the available MCP",
+        "The agent reuses the existing Chrome profile, browser session, and preview tab",
+        "The agent does not launch another browser, window, profile, or isolated context"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Please verify the current theme preview. No browser CLI is installed, but Chrome DevTools MCP and Playwright MCP are available.",
+      "expected_output": "No MCP is connected automatically. The existing Chrome state is preserved while the agent explains that MCP is the discouraged fallback and asks the user which available tool to use.",
+      "assertions": [
+        "The agent does not connect either MCP before receiving the user's choice",
+        "The agent states that MCP is a discouraged fallback because no browser CLI is available",
+        "The agent asks the user which available MCP or alternative to use",
+        "The agent does not launch another browser, window, profile, or isolated context",
+        "The agent does not claim that the preview was verified"
       ]
     }
   ]
