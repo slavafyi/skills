@@ -8,5 +8,5 @@ Skills for day-to-day Shopify development with coding agents.
   verify changes in Chrome via the `preview_theme_id` URL (never localhost).
   Reuses a watcher for the current theme, picks configuration from `.env.local` or
   `shopify.theme.toml`, and attaches browser automation to the existing Chrome session
-  and profile. It prefers Playwright CLI, falls back to another browser CLI, and asks
-  before using the discouraged MCP fallback.
+  and profile. It prefers Playwright CLI (`playwright-cli`), falls back to another
+  browser CLI, and asks before using the discouraged MCP fallback.

@@ -28,9 +28,10 @@ Serve the current Shopify theme and verify the rendered storefront in Chrome.
 6. Use the user's already-running Chrome, current profile, windows, tabs, and browser
    session. Never launch another browser, window, isolated context, or temporary
    profile unless the user explicitly asks for one.
-7. Prefer browser CLIs over MCP. Among available CLIs, prefer Playwright; otherwise use
-   another suitable CLI. MCP is a discouraged fallback: when no browser CLI is
-   available but one or more MCP tools are, ask the user what to use before connecting.
+7. Prefer browser CLIs over MCP. Among available CLIs, prefer Playwright CLI
+   (`playwright-cli`); otherwise use another suitable CLI. MCP is a discouraged fallback:
+   when no browser CLI is available but one or more MCP tools are, ask the user what to
+   use before connecting.
    If no suitable tool is available, report the blocker. Never connect competing
    browser automation tools simultaneously.
 
@@ -77,9 +78,10 @@ Pick the command from the project files, in this order:
    rg '^\[environments\.[^]]+\]$' shopify.theme.toml
    ```
 
-   - `[environments.default]`: run `shopify theme dev`.
+   - One environment named `default`: run `shopify theme dev`.
    - One non-default environment: run `shopify theme dev -e <name>`.
-   - Multiple non-default environments and no requested target: ask which one to use.
+   - Multiple environments and no requested target: ask which one to use, even when
+     one is named `default`.
 
 3. Neither file exists: check the selected store with `shopify theme info`. If none is
    selected and the store cannot be inferred safely, ask for the store and run
@@ -106,9 +108,9 @@ store or environment.
 
 ### 4. Select browser automation and reuse a Chrome tab
 
-Inspect the available browser automation tools before connecting. Use Playwright when
-its CLI is available; otherwise use another suitable browser CLI. Do not choose MCP
-while a suitable CLI is available. If only MCP browser tools are available, ask the
+Inspect the available browser automation tools before connecting. Use Playwright CLI
+(`playwright-cli`) when available; otherwise use another suitable browser CLI. Do not
+choose MCP while a suitable CLI is available. If only MCP browser tools are available, ask the
 user what to use and wait for an answer. Do not include tool-specific operating
 instructions in this workflow; use the selected tool's own documentation or skill.
 
