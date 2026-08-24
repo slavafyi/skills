@@ -17,14 +17,13 @@
     {
       "id": 2,
       "prompt": "Open this theme in Chrome and make sure the announcement bar renders. There's no dev server yet. shopify.theme.toml has default and staging environments; use the usual local setup and don't expose any credentials.",
-      "expected_output": "The project configuration is used without exposing credentials, the watcher is kept observable, and an available browser CLI attached to the existing Chrome profile verifies the announcement bar at the remote preview URL.",
+      "expected_output": "The agent asks whether to use the default or staging environment before starting the watcher and does not expose credentials or claim that the announcement bar was verified.",
       "assertions": [
-        "The agent selects environments.default without asking the user to choose staging",
-        "The agent starts shopify theme dev in an observable long-running session",
-        "The agent uses the project configuration without printing credentials or secret files",
-        "The agent ignores the localhost URL and opens the remote share URL",
-        "The agent uses the preferred available browser CLI with the existing Chrome profile and reports evidence for the announcement bar",
-        "The agent reuses a suitable existing tab before opening a new tab and does not open a new window or isolated browser context"
+        "The agent asks the user to choose between environments.default and environments.staging",
+        "The agent does not assume that environments.default is the intended environment",
+        "The agent does not start shopify theme dev before the user selects an environment",
+        "The agent does not print credentials or secret files",
+        "The agent does not claim that the announcement bar was verified"
       ]
     },
     {
@@ -44,7 +43,7 @@
       "prompt": "Verify this theme preview in my current Chrome. Playwright CLI, Chrome DevTools CLI, and Chrome DevTools MCP are all available.",
       "expected_output": "Playwright CLI is selected and attached to the existing Chrome profile; the available alternatives are not connected; and the existing preview tab is reused.",
       "assertions": [
-        "The agent selects Playwright CLI ahead of every other available browser tool",
+        "The agent detects and selects the playwright-cli command ahead of every other available browser tool",
         "The agent does not connect Chrome DevTools CLI or MCP at the same time",
         "The agent uses the already-running Chrome and current profile",
         "The agent reuses the existing preview tab instead of opening another browser, window, or isolated context"

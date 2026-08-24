@@ -1,6 +1,6 @@
 {
   "name": "shopify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shopify development workflow skills",
   "skills": "./skills/",
   "author": {
