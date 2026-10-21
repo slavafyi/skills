@@ -71,6 +71,54 @@
         "The agent does not launch another browser, window, profile, or isolated context",
         "The agent does not claim that the preview was verified"
       ]
+    },
+    {
+      "id": 7,
+      "prompt": "Verify the announcement bar in my current Chrome. The watcher for this theme is running and reports https://example.myshopify.com/?preview_theme_id=123. Chrome has an active blank tab and an existing https://example.myshopify.com/collections/all tab showing theme 123; its preview query parameter has disappeared. Playwright CLI can attach to this Chrome session.",
+      "expected_output": "The existing store tab is reused after verifying theme 123, even though its URL differs from the share URL and a blank tab is active.",
+      "assertions": [
+        "The agent lists existing Chrome tabs before choosing a tab",
+        "The agent selects the existing example.myshopify.com tab by store domain rather than requiring an exact preview URL match",
+        "The agent verifies window.Shopify.theme.id is 123 rather than requiring the preview_theme_id query parameter",
+        "The agent leaves the blank tab untouched and does not open a new tab",
+        "The agent checks the announcement bar in the reused store tab"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Open this theme preview and verify the header. The watcher for this theme is running and reports https://example.myshopify.com/?preview_theme_id=123. My current Chrome has a blank tab and an unrelated documentation tab, but no tab for example.myshopify.com in any window. Playwright CLI can attach to this Chrome session.",
+      "expected_output": "A new tab is opened with the remote preview URL in the existing Chrome session; the blank and unrelated tabs are left untouched.",
+      "assertions": [
+        "The agent checks tabs across all existing Chrome windows before concluding that no store tab exists",
+        "The agent opens a new tab at https://example.myshopify.com/?preview_theme_id=123 in the existing browser session",
+        "The agent does not navigate or repurpose the existing blank or documentation tab",
+        "The agent does not open a new window, browser instance, profile, or isolated context",
+        "The agent verifies window.Shopify.theme.id is 123 before checking the header"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Check the cart drawer in my current Chrome. The watcher for this theme is running and reports https://example.myshopify.com/?preview_theme_id=123. The front Chrome window contains a blank tab and documentation. A second existing Chrome window contains https://example.myshopify.com/cart showing theme 123. Playwright CLI can attach to this Chrome session.",
+      "expected_output": "The store tab in the second existing window is reused after its theme identity is verified; no tab or window is created and the blank tab is left untouched.",
+      "assertions": [
+        "The agent lists tabs across existing Chrome windows rather than checking only the front window",
+        "The agent selects the existing example.myshopify.com/cart tab in the second window",
+        "The agent verifies window.Shopify.theme.id is 123 before checking the cart drawer",
+        "The agent leaves the blank and documentation tabs untouched",
+        "The agent does not create a tab, window, browser instance, profile, or isolated context"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Verify the price block on /products/sample-shirt and the grid on /collections/summer in my current Chrome. The watcher for this theme is running and reports https://example.myshopify.com/?preview_theme_id=123. Chrome already has the example.myshopify.com homepage open with window.Shopify.theme.id equal to 456, plus a blank tab. Playwright CLI can attach to this Chrome session.",
+      "expected_output": "The existing store tab is switched to development theme 123 through the remote preview URL, then reused to visit both requested paths with theme identity verified after navigation. The blank tab is not used.",
+      "assertions": [
+        "The agent reuses the existing store-domain tab even though it initially shows another theme",
+        "The agent switches that tab to the full remote preview URL and verifies window.Shopify.theme.id is 123",
+        "The agent navigates the same tab to /products/sample-shirt and /collections/summer instead of restricting verification to the homepage",
+        "The agent verifies the development theme identity after navigation before trusting each requested page",
+        "The agent leaves the blank tab untouched and does not open another tab, window, or browser instance"
+      ]
     }
   ]
 }

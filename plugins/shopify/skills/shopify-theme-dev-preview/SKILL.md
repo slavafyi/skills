@@ -125,12 +125,15 @@ List tabs across the existing Chrome windows. Reuse a tab on the expected
 window.Shopify?.theme ?? null
 ```
 
-If its theme ID does not match, navigate it to the full remote preview URL. If no store
-tab exists, reuse a blank tab in the current browser session. Open a new tab in that
-session only when no suitable existing tab exists. Never open a new window or browser
-instance. After navigation, verify `window.Shopify.theme.id` again. The
-`preview_theme_id` query parameter can disappear after Shopify records the preview
-selection, so identity—not the current query string—is the final check.
+If its theme ID does not match, navigate it to the full remote preview URL. Reuse the
+store-domain tab even when its path differs from the page needed for the task; navigate
+that same tab to the requested product, collection, or other storefront page as needed.
+If no store tab exists in any existing Chrome window, open a new tab with the remote
+preview URL in the current browser session. Do not repurpose blank or unrelated tabs.
+Never open a new window or browser instance. After each navigation, verify
+`window.Shopify.theme.id` again. The `preview_theme_id` query parameter can disappear
+after Shopify records the preview selection, so identity—not the current query
+string—is the final check.
 
 If the storefront shows a password or login page, preserve the tab and ask the user to
 complete access rather than requesting or exposing a password in output.
